@@ -1,0 +1,167 @@
+<!-- Author: [Your Name] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - ShareCare</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css">
+</head>
+<body>
+    <!-- Include Header -->
+    <header class="grid-container">
+        <nav class="top-bar">
+            <div class="top-bar-left">
+                <ul class="menu">
+                    <li class="menu-text"><a href="/index.html">app Name</a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    <li><a href="/pages/browse.html">Browse</a></li>
+                    <li><a href="/pages/donate.html">Donate</a></li>
+                    <li><a href="/pages/messages.html">Messages</a></li>
+                    <li><a href="/pages/login.html">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <!-- Notifications Sidebar -->
+            <div class="cell medium-3">
+                <h2>Notifications</h2>
+                <ul class="vertical menu">
+                    <li class="active"><a href="#all">All Notifications</a></li>
+                    <li><a href="#unread">Unread <span class="badge">3</span></a></li>
+                    <li><a href="#donations">Donations</a></li>
+                    <li><a href="#requests">Requests</a></li>
+                    <li><a href="#messages">Messages</a></li>
+                    <li><a href="#system">System Updates</a></li>
+                </ul>
+
+                <!-- Notification Settings -->
+                <div class="notification-settings">
+                    <h4>Settings</h4>
+                    <ul class="no-bullet">
+                        <li>
+                            <div class="switch">
+                                <input class="switch-input" id="emailNotif" type="checkbox" checked>
+                                <label class="switch-paddle" for="emailNotif">
+                                    <span class="show-for-sr">Email Notifications</span>
+                                </label>
+                            </div>
+                            Email Notifications
+                        </li>
+                        <li>
+                            <div class="switch">
+                                <input class="switch-input" id="pushNotif" type="checkbox" checked>
+                                <label class="switch-paddle" for="pushNotif">
+                                    <span class="show-for-sr">Push Notifications</span>
+                                </label>
+                            </div>
+                            Push Notifications
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Notifications List -->
+            <div class="cell medium-9">
+                <!-- Notification Controls -->
+                <div class="grid-x grid-padding-x align-middle">
+                    <div class="cell auto">
+                        <h3>Recent Notifications</h3>
+                    </div>
+                    <div class="cell shrink">
+                        <button class="button small clear">Mark All as Read</button>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="notifications-list">
+                    <!-- Unread Donation Request -->
+                    <div class="notification unread">
+                        <div class="grid-x grid-padding-x align-middle">
+                            <div class="cell shrink">
+                                <div class="notification-icon">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                </div>
+                            </div>
+                            <div class="cell auto">
+                                <h5>New Request for Dining Table</h5>
+                                <p>John Doe is interested in your dining table</p>
+                                <small>2 minutes ago</small>
+                            </div>
+                            <div class="cell shrink">
+                                <div class="button-group tiny">
+                                    <a href="/pages/messages.html" class="button">Reply</a>
+                                    <button class="button secondary">Mark Read</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message Notification -->
+                    <div class="notification unread">
+                        <div class="grid-x grid-padding-x align-middle">
+                            <div class="cell shrink">
+                                <div class="notification-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="cell auto">
+                                <h5>New Message</h5>
+                                <p>Jane Smith sent you a message about Books Collection</p>
+                                <small>1 hour ago</small>
+                            </div>
+                            <div class="cell shrink">
+                                <div class="button-group tiny">
+                                    <a href="/pages/messages.html" class="button">View</a>
+                                    <button class="button secondary">Mark Read</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Notification -->
+                    <div class="notification">
+                        <div class="grid-x grid-padding-x align-middle">
+                            <div class="cell shrink">
+                                <div class="notification-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                            </div>
+                            <div class="cell auto">
+                                <h5>Donation Completed</h5>
+                                <p>Your donation of "Office Chair" has been successfully completed</p>
+                                <small>Yesterday</small>
+                            </div>
+                            <div class="cell shrink">
+                                <button class="button tiny clear">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More -->
+                <div class="text-center margin-top-1">
+                    <button class="button hollow">Load More</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Include Footer -->
+    <footer class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell large-12">
+                <p class="text-center">&copy; 2024 app Name</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"></script>
+</body>
+</html>

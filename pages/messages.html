@@ -1,0 +1,119 @@
+<!-- Author: [Your Name] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - app Name</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css">
+</head>
+<body>
+    <!-- Include Header -->
+    <header class="grid-container">
+        <nav class="top-bar">
+            <div class="top-bar-left">
+                <ul class="menu">
+                    <li class="menu-text"><a href="/index.html">app Name</a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    <li><a href="/pages/browse.html">Browse</a></li>
+                    <li><a href="/pages/donate.html">Donate</a></li>
+                    <li><a href="/pages/messages.html">Messages</a></li>
+                    <li><a href="/pages/login.html">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <!-- Conversations List -->
+            <div class="cell medium-4">
+                <div class="input-group">
+                    <input class="input-group-field" type="search" placeholder="Search messages...">
+                </div>
+
+                <ul class="vertical menu conversations-list">
+                    <!-- Active Conversation -->
+                    <li class="active">
+                        <a href="#conversation1">
+                            <div class="grid-x grid-padding-x">
+                                <div class="cell auto">
+                                    <h5>John Doe</h5>
+                                    <p>Dining Table</p>
+                                    <small>2 mins ago</small>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <!-- Other Conversation -->
+                    <li>
+                        <a href="#conversation2">
+                            <div class="grid-x grid-padding-x">
+                                <div class="cell auto">
+                                    <h5>Jane Smith</h5>
+                                    <p>Books Collection</p>
+                                    <small>Yesterday</small>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="cell medium-8">
+                <!-- Chat Header -->
+                <div class="card">
+                    <div class="card-section">
+                        <h4>Dining Table</h4>
+                        <p>Conversation with John Doe</p>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages">
+                    <!-- Sender Message -->
+                    <div class="message sender">
+                        <div class="message-content">
+                            <p>Hi, I'm interested in the dining table you posted. Is it still available?</p>
+                            <small>10:30 AM</small>
+                        </div>
+                    </div>
+
+                    <!-- Receiver Message -->
+                    <div class="message receiver">
+                        <div class="message-content">
+                            <p>Yes, it's still available! Would you like to arrange a pickup?</p>
+                            <small>10:35 AM</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Input -->
+                <div class="chat-input">
+                    <form id="messageForm">
+                        <div class="input-group">
+                            <input class="input-group-field" type="text" placeholder="Type your message...">
+                            <div class="input-group-button">
+                                <button type="submit" class="button">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Include Footer -->
+    <footer class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell large-12">
+                <p class="text-center">&copy; 2024 app Name</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
