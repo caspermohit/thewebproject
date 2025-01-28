@@ -1,0 +1,133 @@
+<!-- Author: [sudheer chavali] -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity History - app Name</title>
+</head>
+<body>
+    <!-- Include Header -->
+    <header class="grid-container">
+        <nav class="top-bar">
+            <div class="top-bar-left">
+                <ul class="menu">
+                    <li class="menu-text"><a href="/index.html">app Name</a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    <li><a href="/pages/browse.html">Browse</a></li>
+                    <li><a href="/pages/donate.html">Donate</a></li>
+                    <li><a href="/pages/messages.html">Messages</a></li>
+                    <li><a href="/pages/login.html">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell">
+                <h2>Activity History</h2>
+                
+                <!-- History Tabs -->
+                <ul class="tabs" data-tabs id="history-tabs">
+                    <li class="tabs-title is-active"><a href="#donations">Donations</a></li>
+                    <li class="tabs-title"><a href="#requests">Requests</a></li>
+                </ul>
+
+                <!-- Donations History -->
+                <div class="tabs-panel is-active" id="donations">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Recipient</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Office Chair</td>
+                                <td>2024-01-15</td>
+                                <td>Completed</td>
+                                <td>John Doe</td>
+                                <td>
+                                    <button class="button tiny">View Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Books Collection</td>
+                                <td>2024-01-10</td>
+                                <td>Available</td>
+                                <td>-</td>
+                                <td>
+                                    <button class="button tiny">Edit</button>
+                                    <button class="button tiny alert">Remove</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Requests History -->
+                <div class="tabs-panel" id="requests">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Donor</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Desk Lamp</td>
+                                <td>2024-01-20</td>
+                                <td>Pending</td>
+                                <td>Jane Smith</td>
+                                <td>
+                                    <button class="button tiny">View Details</button>
+                                    <button class="button tiny alert">Cancel</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Bookshelf</td>
+                                <td>2024-01-05</td>
+                                <td>Completed</td>
+                                <td>Mike Johnson</td>
+                                <td>
+                                    <button class="button tiny">View Details</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <ul class="pagination text-center">
+                    <li class="disabled">Previous</li>
+                    <li class="current">1</li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Include Footer -->
+    <footer class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell large-12">
+                <p class="text-center">&copy; 2024 app Name</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
