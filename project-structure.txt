@@ -1,0 +1,25 @@
+project-root/
+├── css/
+│   ├── foundation.css
+│   ├── member1-styles.css
+│   ├── member2-styles.css
+│   ├── member3-styles.css
+│   └── member4-styles.css
+├── images/
+│   ├── items/
+│   │   ├── furniture/
+│   │   │   ├── chair1.jpg
+│   │   │   ├── desk1.jpg
+│   │   │   ├── table1.jpg
+│   │   │   └── bookshelf1.jpg
+│   │   ├── electronics/
+│   │   │   └── lamp1.jpg
+│   │   └── books/
+│   │       └── books-collection1.jpg
+│   ├── hero/
+│   │   └── hero-bg.jpg
+│   └── logo/
+│       └── sharecare-logo.png
+├── js/
+│   └── foundation.js
+└── index.html

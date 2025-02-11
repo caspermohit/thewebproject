@@ -1,0 +1,402 @@
+/* 
+Author: Team Member 2
+Description: Styling for Cards and Content Sections
+*/
+
+/* Color System */
+:root {
+    /* Brand Colors */
+    --primary-color: #43aa8b;
+    --primary-light: #6abba2;
+    --primary-dark: #368c72;
+    
+    --secondary-color: #374b43;
+    --secondary-light: #4a6359;
+    --secondary-dark: #2a3a33;
+    
+    /* Neutral Colors */
+    --neutral-100: #ffffff;
+    --neutral-200: #f8f9fa;
+    --neutral-300: #e9ecef;
+    --neutral-400: #dee2e6;
+    --neutral-500: #adb5bd;
+    --neutral-600: #6c757d;
+    --neutral-700: #495057;
+    --neutral-800: #343a40;
+    --neutral-900: #212529;
+}
+
+/* Content Spacing */
+.main-content {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+/* Sidebar Spacing */
+.sidebar-padding {
+    padding-top: 1.5rem;
+}
+
+/* Section Margins */
+.section-margin {
+    margin-bottom: 3rem;
+}
+
+/* Card Styles */
+.card {
+    background: var(--neutral-100);
+    border: 1px solid var(--neutral-300);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-section {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--neutral-100);
+}
+
+.card-section h4 {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-section p {
+    color: var(--neutral-600);
+    line-height: 1.6;
+}
+
+/* Section Styles */
+section {
+    padding: 2rem 0;
+}
+
+section h2 {
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 640px) {
+    .main-content {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .section-padding {
+        padding: 2rem 0;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Image Optimization */
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: block;
+}
+
+/* Hero Background Image */
+.hero {
+    background-image: url('../images/hero/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Add overlay to hero image */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero * {
+    position: relative;
+    z-index: 2;
+    color: var(--neutral-100);
+}
+
+/* Item Detail Images */
+.primary-image img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Thumbnail Images */
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.thumbnail-grid img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Responsive Image Adjustments */
+@media screen and (max-width: 640px) {
+    .card img {
+        height: 200px;
+    }
+    
+    .thumbnail-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .thumbnail-grid img {
+        height: 60px;
+    }
+}
+
+/* Content Box Model */
+.content-wrapper {
+    padding: 1.5rem;
+    background: var(--neutral-100);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+/* Form Elements Box Model */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--neutral-400);
+    border-radius: 4px;
+}
+
+/* Button Box Model */
+.button {
+    display: inline-block;
+    width: auto;
+    padding: 0.85em 1.5em;
+    margin: 0;
+}
+
+.button.expanded {
+    width: 100%;
+    display: block;
+}
+
+/* Content Section Box Model */
+.content-section {
+    padding: 2rem;
+    background: var(--neutral-100);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Grid Item Box Model */
+.grid-item {
+    padding: 1rem;
+    height: 100%;
+}
+
+/* Map Styles */
+.map-container {
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 600px;
+    overflow: hidden;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.map-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.map-marker i {
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+.marker-label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--neutral-100);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    color: var(--secondary-color);
+}
+
+.item-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.item-card {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--neutral-300);
+    transition: background-color 0.2s ease;
+}
+
+.item-card:hover {
+    background-color: var(--neutral-200);
+    cursor: pointer;
+}
+
+.item-card img {
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.item-card h6 {
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+.item-card small {
+    color: var(--neutral-600);
+}
+
+/* Map Filter Styles */
+#mapFilters label {
+    margin-bottom: 1rem;
+}
+
+#mapFilters select {
+    margin-bottom: 1.5rem;
+}
+
+.leaflet-popup-content {
+    color: var(--secondary-color);
+}
+
+.leaflet-popup-content b {
+    color: var(--primary-color);
+}
+
+/* Location Info Styles */
+.location-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+}
+
+.location-info p {
+    margin: 0;
+    flex: 1;
+}
+
+.location-info .button {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.location-info .button i {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+.location-info .button.secondary {
+    background-color: var(--neutral-200);
+    color: var(--secondary-color);
+    border: 1px solid var(--neutral-400);
+}
+
+.location-info .button.secondary:hover {
+    background-color: var(--neutral-300);
+    color: var(--secondary-dark);
+}
+
+/* Auth Form Styles */
+.auth-card {
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.auth-card .card {
+    border-color: var(--neutral-300);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card .card-section {
+    padding: 2rem;
+}
+
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.auth-card fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.auth-card legend {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.auth-card .text-primary {
+    color: var(--primary-color);
+}
+
+.auth-card .text-secondary {
+    color: var(--secondary-color);
+} 

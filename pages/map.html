@@ -1,10 +1,10 @@
-<!-- Author: [zia shaikh] -->
+<!-- Author: [Team Member] -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate Item - Share&Care</title>
+    <title>Item Locations - Share&Care</title>
     
     <!-- Foundation CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css">
@@ -20,6 +20,9 @@
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    
+    <!-- Leaflet CSS for Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
     <!-- Include Header -->
@@ -28,12 +31,10 @@
             <div class="top-bar">
                 <div class="top-bar-left">
                     <ul class="menu">
-                        <li class="menu-text"><a href="../index.html"> </a>Share&Care</li>
+                        <li class="menu-text">ShareCare</li>
                         <li><a href="../index.html"><i class="bx bx-home"></i> Home</a></li>
                         <li><a href="/pages/donate.html"><i class="bx bx-donate-heart"></i> Donate</a></li>
                         <li><a href="/pages/browse.html"><i class="bx bx-search"></i> Browse</a></li>
-                        
-                        
                     </ul>
                 </div>
                 <div class="top-bar-right">
@@ -46,22 +47,18 @@
             </div>
         </div>
     </header>
+
     <main class="grid-container">
-        <div class="grid-x grid-padding-x align-center">
-            <div class="cell medium-8">
+        <div class="grid-x grid-padding-x">
+            <!-- Map Filters -->
+            <div class="cell medium-3">
                 <div class="card">
                     <div class="card-section">
-                        <h2 class="text-center">Donate an Item</h2>
-                        
-                        <form id="donationForm">
-                            <!-- Basic Item Details -->
-                            <label for="itemName">Item Name
-                                <input type="text" id="itemName" name="itemName" required>
-                            </label>
-
-                            <label for="category">Category
-                                <select id="category" name="category" required>
-                                    <option value="">Select a category</option>
+                        <h4>Filter Items</h4>
+                        <form id="mapFilters">
+                            <label>Category
+                                <select name="category">
+                                    <option value="">All Categories</option>
                                     <option value="furniture">Furniture</option>
                                     <option value="electronics">Electronics</option>
                                     <option value="clothing">Clothing</option>
@@ -69,30 +66,70 @@
                                 </select>
                             </label>
 
-                            <label for="condition">Condition
-                                <select id="condition" name="condition" required>
-                                    <option value="">Select condition</option>
-                                    <option value="new">New</option>
-                                    <option value="likeNew">Like New</option>
-                                    <option value="good">Good</option>
-                                    <option value="fair">Fair</option>
+                            <label>Distance
+                                <select name="distance">
+                                    <option value="5">Within 5 miles</option>
+                                    <option value="10">Within 10 miles</option>
+                                    <option value="25">Within 25 miles</option>
+                                    <option value="50">Within 50 miles</option>
                                 </select>
                             </label>
 
-                            <label for="description">Description
-                                <textarea id="description" name="description" rows="4" required></textarea>
+                            <label>Search Location
+                                <div class="input-group">
+                                    <input type="text" placeholder="Enter zip code or address">
+                                    <div class="input-group-button">
+                                        <button class="button"><i class="bx bx-search"></i></button>
+                                    </div>
+                                </div>
                             </label>
 
-                            <label for="pickupAddress">Pickup Address
-                                <textarea id="pickupAddress" name="pickupAddress" rows="3" required></textarea>
-                            </label>
-
-                            <label for="itemImages">Item Images
-                                <input type="file" id="itemImages" name="itemImages" multiple accept="image/*">
-                            </label>
-
-                            <button type="submit" class="button expanded">Submit Donation</button>
+                            <button type="submit" class="button expanded">Apply Filters</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Container -->
+            <div class="cell medium-6">
+                <div class="card">
+                    <div class="card-section">
+                        <div class="map-container">
+                            <img src="../images/map/location-map.png" alt="Item locations map" class="map-image">
+                            <div class="map-overlay">
+                                <div class="map-marker" style="top: 40%; left: 45%;">
+                                    <i class="bx bx-map-pin"></i>
+                                    <span class="marker-label">Couch</span>
+                                </div>
+                                <div class="map-marker" style="top: 35%; left: 55%;">
+                                    <i class="bx bx-map-pin"></i>
+                                    <span class="marker-label">Desk Lamp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Items -->
+            <div class="cell medium-3">
+                <div class="card">
+                    <div class="card-section">
+                        <h4>Available Items</h4>
+                        <div class="item-list">
+                            <div class="item-card">
+                                <div class="grid-x grid-padding-x align-middle">
+                                    <div class="cell shrink">
+                                        <img src="../images/furniture/couch.jpg" alt="Couch" width="50">
+                                    </div>
+                                    <div class="cell auto">
+                                        <h6>Couch</h6>
+                                        <p><small>2.5 miles away</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- More items... -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,8 +168,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Foundation JavaScript -->
-    
 </body>
-</html>
+</html> 

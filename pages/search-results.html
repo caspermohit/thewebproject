@@ -4,34 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results - app Name</title>
+    <title>Search Results - Share&Care</title>
     
+    <!-- Foundation CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css">
+    
+    <!-- Team Member CSS Files -->
+    <link rel="stylesheet" href="../css/member1-styles.css">
+    <link rel="stylesheet" href="../css/member2-styles.css">
+    <link rel="stylesheet" href="../css/member3-styles.css">
+    <link rel="stylesheet" href="../css/member4-styles.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Helvetica+Neue&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
     <!-- Include Header -->
-    <header class="grid-container">
-        <nav class="top-bar">
-            <div class="top-bar-left">
-                <ul class="menu">
-                    <li class="menu-text"><a href="/index.html">app Name</a></li>
-                </ul>
+   <header class="site-header">
+        <div class="grid-container">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <ul class="menu">
+                        <li class="menu-text">ShareCare</li>
+                        <li><a href="../index.html"><i class="bx bx-home"></i> Home</a></li>
+                        <li><a href="pages/donate.html"><i class="bx bx-donate-heart"></i> Donate</a></li>
+                        <li><a href="pages/browse.html"><i class="bx bx-search"></i> Browse</a></li>
+                        
+                        
+                    </ul>
+                </div>
+                <div class="top-bar-right">
+                    <ul class="menu">
+                        <li><a href="pages/auth/index.html" class="button"><i class="bx bx-user"></i> Login In</a></li>
+                        <li><a href="pages/history.html" class="bx bx-history"></a></li>
+                        <li><a href="pages/notifications.html" class="bx bx-bell"></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="top-bar-right">
-                <ul class="menu">
-                    <li><a href="/pages/browse.html">Browse</a></li>
-                    <li><a href="/pages/donate.html">Donate</a></li>
-                    <li><a href="/pages/messages.html">Messages</a></li>
-                    <li><a href="/pages/login.html">Login</a></li>
-                </ul>
-            </div>
-        </nav>
+        </div>
     </header>
 
     <main class="grid-container">
         <!-- Search Header -->
         <div class="grid-x grid-padding-x">
             <div class="cell">
-                <h2>Search Results</h2>
+                <h2 class="section-header">Search Results</h2>
                 <p>Showing results for "<span id="searchQuery">furniture</span>"</p>
             </div>
         </div>
@@ -93,12 +113,38 @@
     </main>
 
     <!-- Include Footer -->
-    <footer class="grid-container">
-        <div class="grid-x grid-padding-x">
-            <div class="cell large-12">
-                <p class="text-center">&copy; 2024 app Name</p>
+    <footer>
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x">
+                <div class="cell medium-4">
+                    <h4 class="footer-title">About ShareCare</h4>
+                    <p>Connecting communities through meaningful donations.</p>
+                </div>
+                <div class="cell medium-4">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="cell medium-4">
+                    <h4 class="footer-title">Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="bx bxl-facebook"></i></a>
+                        <a href="#"><i class="bx bxl-twitter"></i></a>
+                        <a href="#"><i class="bx bxl-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="footer-copyright text-center">
+                        <p>&copy; 2024 ShareCare. All rights reserved.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+    <!-- Foundation JavaScript -->
+    
 </body>
 </html> 

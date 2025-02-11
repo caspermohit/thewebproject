@@ -1,0 +1,484 @@
+/* 
+Author: Mohit Shah
+Description: Styling for Header, Navigation, and Primary Buttons
+*/
+
+/* Global Box Model Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Spacing */
+.grid-container {
+    padding: 0 1rem;
+    max-width: 100 rem;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+/* Header and Navigation Styles */
+header {
+   
+    margin: auto;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.top-bar {
+   
+    padding: 1rem 0;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.menu-text {
+    
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.menu a {
+    
+    font-weight: 500;
+}
+
+/* Primary Button Styles */
+.button {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    padding: 0.85em 1.5em;
+    display: inline-block;
+    margin: 0;
+    border: none;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 640px) {
+    .menu-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Example of different selector types */
+
+/* 1. Element Selector */
+header {
+    background-color: var(--neutral-300);
+    padding: 1rem 0;
+    margin: auto;
+}
+
+/* 2. Class Selector */
+.nav-item {
+    margin: 0 1rem;
+}
+
+/* 3. ID Selector */
+#main-logo {
+    max-width: 150px;
+}
+
+/* 4. Pseudo-class */
+.nav-link:hover {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+/* 5. Pseudo-element */
+.card-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--neutral-800);
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+    /* Tablet styles */
+}
+
+@media screen and (min-width: 1025px) {
+    /* Desktop styles */
+}
+
+/* Heading Styles */
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.section-header {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 2rem 0;
+    color: var(--secondary-color);
+    position: relative;
+}
+
+.section-header::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--neutral-100);
+    margin-bottom: 1rem;
+}
+
+/* Footer Headings */
+.footer-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--neutral-100);
+    margin-bottom: 1.25rem;
+}
+
+/* Notification Headings */
+.notification-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Message Headings */
+.message-sender {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 640px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-header {
+        font-size: 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+    }
+    
+    .footer-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Main Content Spacing */
+main {
+    padding: 2rem 0;
+    min-height: calc(100vh - 300px); /* Ensures footer stays at bottom */
+    width: 100%;
+}
+
+/* Section Spacing */
+.section-padding {
+    padding: 4rem 0;
+}
+
+/* Hero Section Spacing */
+.hero {
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+    background-color: var(--neutral-200);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero Image Styles */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Hero Content Overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--neutral-100);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Loading */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lazy Loading Placeholder */
+.img-placeholder {
+    background-color: var(--neutral-300);
+    position: relative;
+    overflow: hidden;
+}
+
+.img-placeholder::before {
+    content: '';
+    display: block;
+    padding-top: 75%;
+}
+
+/* Content Grid Spacing */
+.grid-margin-x {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Card Grid Spacing */
+.card {
+    margin-bottom: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Menu Box Model */
+.menu {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu li {
+    padding: 0 1rem;
+} 
+
+/* Responsive Header */
+@media screen and (max-width: 640px) {
+    .menu-text {
+        font-size: 1.2rem;
+    }
+    
+    .top-bar {
+        padding: 0.5rem 0;
+    }
+    
+    .top-bar-right .menu {
+        justify-content: flex-end;
+    }
+    
+    .top-bar-right .menu a {
+        padding: 0.5rem;
+    }
+    
+    /* Stack menu items on mobile */
+    @media screen and (max-width: 480px) {
+        .top-bar, .top-bar .menu {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .top-bar-right {
+            margin-top: 1rem;
+        }
+    }
+}
+
+/* Color System */
+:root {
+    /* Brand Colors */
+    --primary-color: #43aa8b;
+    --primary-light: #6abba2;
+    --primary-dark: #368c72;
+    
+    --secondary-color: #374b43;
+    --secondary-light: #4a6359;
+    --secondary-dark: #2a3a33;
+    
+    /* Neutral Colors */
+    --neutral-100: #ffffff;
+    --neutral-200: #f8f9fa;
+    --neutral-300: #e9ecef;
+    --neutral-400: #dee2e6;
+    --neutral-500: #adb5bd;
+    --neutral-600: #6c757d;
+    --neutral-700: #495057;
+    --neutral-800: #343a40;
+    --neutral-900: #212529;
+    
+    /* State Colors */
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+}
+
+/* Typography Colors */
+body {
+    color: var(--neutral-800);
+    background-color: var(--neutral-200);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--secondary-color);
+}
+
+
+
+/* Link Colors */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Border Colors */
+.border {
+    border-color: var(--neutral-300);
+}
+
+/* Background Colors */
+.bg-primary {
+    background-color: var(--primary-color);
+    color: var(--neutral-100);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color);
+    color: var(--neutral-100);
+}
+
+.bg-light {
+    background-color: var(--neutral-200);
+}
+
+.bg-dark {
+    background-color: var(--neutral-800);
+    color: var(--neutral-100);
+}
+
+/* Text Colors */
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
+
+.text-muted {
+    color: var(--neutral-600);
+}
+
+/* Card Colors */
+.card {
+    background-color: var(--neutral-100);
+    border-color: var(--neutral-300);
+}
+
+/* Form Colors */
+input, select, textarea {
+    background-color: var(--neutral-100);
+    border-color: var(--neutral-400);
+    color: var(--neutral-800);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(67, 170, 139, 0.25);
+}
+
+/* Button Styles */
+.button.primary {
+    background-color: var(--primary-color);
+    color: var(--neutral-100);
+    transition: background-color 0.3s ease;
+}
+
+.button.primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.button.secondary {
+    background-color: var(--secondary-color);
+    color: var(--neutral-100);
+    transition: background-color 0.3s ease;
+}
+
+.button.secondary:hover {
+    background-color: var(--secondary-dark);
+}
+
+/* Alert/Message Colors */
+.alert {
+    background-color: var(--neutral-200);
+    border-color: var(--neutral-300);
+    color: var(--neutral-800);
+}
+
+.alert.success {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+    color: var(--secondary-dark);
+}
+
+/* Switch Styles */
+.switch {
+    margin-bottom: 1rem;
+}
+
+.switch-input:checked ~ .switch-paddle {
+    background: var(--primary-color);
+}
+
+.switch-paddle {
+    background: var(--neutral-400);
+    transition: all 0.25s ease-out;
+}
+
+.switch-paddle::after {
+    background: var(--neutral-100);
+}
+
+.switch-active, .switch-inactive {
+    color: var(--neutral-700);
+}
+
+.switch:hover .switch-paddle {
+    background: var(--primary-light);
+}
+
+.switch-input:checked:hover ~ .switch-paddle {
+    background: var(--primary-dark);
+}

@@ -1,0 +1,559 @@
+/* 
+Author: Team Member 3
+Description: Styling for Forms and Interactive Elements
+*/
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    border-radius: 4px;
+    border: 1px solid var(--neutral-400);
+    padding: 0.8rem;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+}
+
+.custom-checkbox::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 640px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        font-size: 16px; /* Prevents zoom on mobile */
+    }
+}
+
+/* Form Container Box Model */
+.form-container {
+    background: var(--neutral-100);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+/* Grid Spacing */
+.grid-x {
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
+}
+
+.cell {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+}
+
+/* Table Box Model */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    background: var(--neutral-100);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--neutral-400);
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Form Field Container */
+.field-container {
+    padding: 0.5rem 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Label Box Model */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* Table Container */
+.table-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* History Page Styles */
+.tabs {
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.tabs-title > a {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    color: var(--neutral-600);
+}
+
+.tabs-title > a:hover {
+    background: var(--neutral-300);
+}
+
+.tabs-title.is-active > a {
+    background: var(--primary-color);
+    color: var(--neutral-100);
+}
+
+/* Table Styles for History */
+.tabs-panel table {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-collapse: collapse;
+}
+
+.tabs-panel th {
+    background: var(--neutral-200);
+    font-weight: 600;
+    text-align: left;
+}
+
+.tabs-panel td, .tabs-panel th {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--neutral-400);
+}
+
+/* Status Indicators */
+.status {
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.875rem;
+}
+
+.status-pending {
+    background: var(--primary-light);
+    color: var(--secondary-dark);
+}
+
+.status-completed {
+    background: var(--primary-color);
+    color: var(--neutral-100);
+}
+
+/* Color Variables */
+:root {
+    --primary-color: #43aa8b;
+    --secondary-color: #374b43;
+    --primary-hover: #3a9177;
+    --secondary-hover: #2d3c36;
+}
+
+/* Button Styles */
+.button {
+    background-color: var(--primary-color);
+    color: var(--neutral-100);
+}
+
+.button:hover {
+    background-color: var(--primary-hover);
+}
+
+.button.secondary {
+    background-color: var(--secondary-color);
+}
+
+.button.secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+/* Header Styles */
+.site-header {
+    background-color: var(--neutral-100);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.top-bar {
+    background-color: var(--neutral-100);
+}
+
+.menu a {
+    color: var(--secondary-color);
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Active Navigation */
+.menu .is-active > a {
+    background-color: var(--primary-color);
+    color: var(--neutral-100);
+}
+
+/* Section Headers */
+.section-header {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Card Styles */
+.card {
+    border: 1px solid var(--neutral-400);
+    border-radius: 4px;
+}
+
+.card-title {
+    color: var(--secondary-color);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--neutral-100);
+    padding: 3rem 0;
+}
+
+.footer-title {
+    color: var(--primary-color);
+}
+
+.footer-links a {
+    color: var(--neutral-100);
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Social Icons */
+.social-icons a {
+    color: var(--primary-color);
+}
+
+.social-icons a:hover {
+    color: var(--neutral-100);
+}
+
+/* Form Elements */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(67, 170, 139, 0.5);
+}
+
+/* Tabs */
+.tabs-title > a:hover {
+    background: var(--neutral-300);
+    color: var(--primary-color);
+}
+
+.tabs-title.is-active > a {
+    background: var(--primary-color);
+    color: var(--neutral-100);
+}
+
+/* Status Indicators */
+.status-pending {
+    background: var(--primary-light);
+    color: var(--secondary-dark);
+}
+
+.status-completed {
+    background: var(--primary-color);
+    color: var(--neutral-100);
+}
+
+/* Pagination Styles */
+.pagination {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination li a {
+    color: var(--secondary-color);
+    border: 1px solid var(--neutral-300);
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.pagination li a:hover {
+    background-color: var(--primary-light);
+    color: var(--neutral-100);
+    border-color: var(--primary-color);
+}
+
+.pagination .current {
+    background-color: var(--primary-color);
+    color: var(--neutral-100);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+}
+
+.pagination .disabled {
+    color: var(--neutral-500);
+    border: 1px solid var(--neutral-300);
+    padding: 0.5rem 1rem;
+}
+
+/* Previous/Next Buttons */
+.pagination .pagination-previous a,
+.pagination .pagination-next a {
+    background-color: var(--neutral-100);
+    color: var(--secondary-color);
+    border: 1px solid var(--neutral-300);
+}
+
+.pagination .pagination-previous a:hover,
+.pagination .pagination-next a:hover {
+    background-color: var(--primary-light);
+    color: var(--neutral-100);
+    border-color: var(--primary-color);
+}
+
+/* Ellipsis */
+.pagination .ellipsis {
+    color: var(--neutral-600);
+    padding: 0.5rem 1rem;
+}
+
+/* Message Styles */
+.chat-container {
+    background-color: var(--neutral-100);
+    border: 1px solid var(--neutral-300);
+    border-radius: 8px;
+}
+
+.chat-message {
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+}
+
+.chat-message.sent {
+    background-color: var(--primary-light);
+    color: var(--neutral-800);
+    margin-left: 2rem;
+}
+
+.chat-message.received {
+    background-color: var(--neutral-200);
+    color: var(--neutral-800);
+    margin-right: 2rem;
+}
+
+.chat-timestamp {
+    color: var(--neutral-600);
+    font-size: 0.8rem;
+}
+
+/* Notification Styles */
+.notification {
+    background-color: var(--neutral-100);
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+    padding: 1rem;
+}
+
+.notification:hover {
+    background-color: var(--neutral-200);
+}
+
+.notification.unread {
+    background-color: rgba(67, 170, 139, 0.1);
+    border-left-color: var(--primary-color);
+}
+
+.notification-title {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.notification-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.notification-time {
+    color: var(--neutral-600);
+    font-size: 0.8rem;
+}
+
+/* Notification Action Buttons */
+.button.small.clear {
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.button.mark-all:hover {
+    background-color: var(--secondary-color);
+    color: var(--neutral-100);
+}
+
+.notification .button-group .button {
+    margin: 0 0.25rem;
+}
+
+.notification .button.secondary {
+    background-color: var(--neutral-300);
+    color: var(--secondary-color);
+}
+
+.notification .button.secondary:hover {
+    background-color: var(--neutral-400);
+}
+
+.notification .button.clear {
+    color: var(--neutral-600);
+}
+
+.notification .button.clear:hover {
+    color: var(--secondary-color);
+}
+
+/* Load More Button */
+.button.hollow {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.button.hollow:hover {
+    background-color: var(--primary-color);
+    color: var(--neutral-100);
+}
+
+/* Notification Menu */
+.vertical.menu {
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.vertical.menu a {
+    color: var(--secondary-color);
+    padding: 0.7rem 1rem;
+}
+
+.vertical.menu a:hover {
+    background-color: var(--neutral-200);
+}
+
+.vertical.menu .active > a {
+    background-color: var(--primary-color);
+    color: var(--neutral-100);
+}
+
+/* Badge Colors */
+.badge {
+    background-color: var(--primary-color);
+    color: var(--neutral-100);
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+}
+
+.badge.alert {
+    background-color: var(--secondary-color);
+}
+
+/* Auth Form Styles */
+.auth-card {
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.auth-card .card {
+    border-color: var(--neutral-300);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card .card-section {
+    padding: 2rem;
+}
+
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.auth-card p {
+    color: var(--neutral-600);
+    margin-bottom: 1.5rem;
+}
+
+.auth-card label {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.auth-card input[type="email"],
+.auth-card input[type="text"],
+.auth-card input[type="password"] {
+    border: 1px solid var(--neutral-300);
+    border-radius: 4px;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.auth-card input[type="email"]:focus,
+.auth-card input[type="text"]:focus,
+.auth-card input[type="password"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color);
+    outline: none;
+}
+
+.auth-card .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.auth-card .checkbox-label input[type="checkbox"] {
+    margin: 0;
+}
+
+.auth-card .button {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.auth-card .text-center {
+    margin-bottom: 0;
+}
