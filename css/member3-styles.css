@@ -10,6 +10,9 @@ Description: Styling for Forms and Interactive Elements
     width: 100%;
 }
 
+.form-group:last-child {
+    margin-bottom: 2rem;
+}
 
 .form-group label {
     color: var(--secondary-color);
@@ -34,6 +37,19 @@ Description: Styling for Forms and Interactive Elements
     border-color: var(--primary-color);
     box-shadow: 0 0 0 1px var(--primary-color);
     outline: none;
+}
+
+.form-group input:invalid,
+.form-group select:invalid,
+.form-group textarea:invalid {
+    border-color: var(--neutral-300);
+}
+
+.form-group input:invalid:focus,
+.form-group select:invalid:focus,
+.form-group textarea:invalid:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color);
 }
 
 /* Custom Checkbox */
@@ -513,11 +529,20 @@ input[type="password"]:focus {
 
 .auth-card .card {
     border-color: var(--neutral-300);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .auth-card .card-section {
     padding: 2rem;
+}
+
+.auth-card .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-card .form-group:last-child {
+    margin-bottom: 1rem;
 }
 
 .auth-card h2 {
@@ -606,4 +631,48 @@ input[type="password"]:focus {
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 1rem;
+}
+
+/* Map Search Styles */
+.map-search {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 1rem;
+    height: 40px;
+}
+
+.input-group input {
+    flex: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+    height: 100%;
+    line-height: normal;
+}
+
+.input-group-button .button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin: 0;
+    padding: 0 1rem;
+    background-color: var(--primary-color);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group-button .button:hover {
+    background-color: var(--primary-dark);
+}
+
+.input-group-button .button i {
+    font-size: 1.2rem;
+    color: var(--neutral-100);
+    line-height: 1;
 }

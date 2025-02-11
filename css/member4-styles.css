@@ -51,7 +51,7 @@ footer {
 }
 
 .footer-links a {
-    color: var(--neutral-100);
+    color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 0.9rem;
