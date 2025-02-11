@@ -676,3 +676,118 @@ input[type="password"]:focus {
     color: var(--neutral-100);
     line-height: 1;
 }
+
+/* Mobile Responsive Form Styles */
+@media screen and (max-width: 640px) {
+    /* Form Layout */
+    fieldset {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+    }
+
+    legend {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    /* Auth Forms */
+    .auth-card {
+        margin: 1rem auto;
+    }
+
+    .auth-card .card-section {
+        padding: 1rem;
+    }
+
+    /* Form Elements */
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.7rem;
+        font-size: 16px;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Buttons in Forms */
+    .form-group button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    /* File Inputs */
+    input[type="file"] {
+        padding: 0.5rem 0;
+    }
+
+    /* Location Options */
+    .location-options {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .location-options .button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Map Container */
+    .map-container {
+        height: 300px;
+        margin: 1rem -1rem;
+        border-radius: 0;
+    }
+
+    /* Input Groups */
+    .input-group {
+        height: 45px; /* Slightly larger touch target on mobile */
+    }
+
+    .input-group input {
+        font-size: 16px;
+    }
+
+    .input-group-button .button {
+        padding: 0 1.2rem;
+    }
+
+    /* File Upload */
+    input[type="file"] {
+        font-size: 14px;
+    }
+
+    /* Map Controls */
+    .map-filters {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--neutral-100);
+        padding: 1rem;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .map-filters .card {
+        margin-bottom: 0;
+        box-shadow: none;
+        border: none;
+    }
+}
+
+/* Tablet Responsive Styles */
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem;
+    }
+
+    .location-options {
+        gap: 0.75rem;
+    }
+}

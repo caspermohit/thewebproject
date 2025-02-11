@@ -33,81 +33,107 @@
                     <ul class="menu">
                         <li class="menu-text"><a href="../index.html"> </a>Share&Care</li>
                         <li><a href="../index.html"><i class="bx bx-home"></i> Home</a></li>
-                        <li><a href="/pages/donate.html"><i class="bx bx-donate-heart"></i> Donate</a></li>
-                        <li><a href="/pages/browse.html"><i class="bx bx-search"></i> Browse</a></li>
+                        <li><a href="donate.html"><i class="bx bx-donate-heart"></i> Donate</a></li>
+                        <li><a href="browse.html"><i class="bx bx-search"></i> Browse</a></li>
                         
                         
                     </ul>
                 </div>
                 <div class="top-bar-right">
                     <ul class="menu">
-                        <li><a href="/pages/auth/login.html" class="button"><i class="bx bx-user"></i> Login In</a></li>
-                        <li><a href="/pages/history.html" class="bx bx-history"></a></li>
-                        <li><a href="/pages/notifications.html" class="bx bx-bell"></a></li>
+                        <li><a href="auth/login.html" class="button"><i class="bx bx-user"></i> Login In</a></li>
+                        <li><a href="history.html" class="bx bx-history"></a></li>
+                        <li><a href="notifications.html" class="bx bx-bell"></a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li><a href="../index.html">Home</a></li>
+            <li>Donate an Item</li>
+        </ul>
+    </div>
     <div class="spacer-medium"></div>
     <main class="grid-container">
         <div class="grid-x grid-padding-x align-center">
-            <div class="cell medium-8">
+            <div class="cell small-12 medium-10 large-8">
                 <div class="card">
                     <div class="card-section">
                         <h2 class="text-center">Donate an Item</h2>
                         
                         <form id="donationForm">
-                            <div class="form-group">
-                                <label for="itemName">Item Name
-                                    <input type="text" id="itemName" name="itemName"placeholder="Enter your item name" required>
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="category">Category
-                                   <input type="text" id="category" name="category" placeholder="Enter your item category" required>
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="itemCondition">Condition
-                                    <input type="text" id="itemCondition" name="itemCondition" placeholder="Enter your item condition" required>
-                                </label>
-                            </div>
-
-                            <label for="description">Description
-                                <textarea id="description" name="description" rows="4" required></textarea>
-                            </label>
-
-                            <div class="form-group">
-                                <label for="pickupLocation">Pickup Location</label>
-                                <div class="location-options">
-                                    <button type="button" class="button small" id="currentLocationBtn">
-                                        <i class="bx bx-current-location"></i> Use Current Location
-                                    </button>
-                                    <button type="button" class="button small" id="selectOnMapBtn">
-                                        <i class="bx bx-map-pin"></i> Select on Map
-                                    </button>
+                            <!-- Basic Information -->
+                            <fieldset>
+                                <legend class="text-secondary">Basic Information</legend>
+                                <div class="form-group">
+                                    <label for="itemName">Item Name
+                                        <input type="text" id="itemName" name="itemName" placeholder="Enter your item name" required>
+                                    </label>
                                 </div>
 
-                                <div class="map-container" id="locationMap" style="display: none;">
-                                    <div id="map" style="height: 300px; margin: 1rem 0;"></div>
+                                <div class="form-group">
+                                    <label for="category">Category
+                                       <input type="text" id="category" name="category" placeholder="Enter your item category" required>
+                                    </label>
                                 </div>
 
-                                <input type="hidden" id="latitude" name="latitude">
-                                <input type="hidden" id="longitude" name="longitude">
-                                
-                                <label for="pickupAddress">Pickup Address
-                                    <textarea id="pickupAddress" name="pickupAddress" rows="3" required></textarea>
-                                </label>
-                            </div>
+                                <div class="form-group">
+                                    <label for="itemCondition">Condition
+                                        <input type="text" id="itemCondition" name="itemCondition" placeholder="Enter your item condition" required>
+                                    </label>
+                                </div>
+                            </fieldset>
 
-                            <label for="itemImages">Item Images
-                                <input type="file" id="itemImages" name="itemImages" multiple accept="image/*">
-                            </label>
+                            <!-- Description -->
+                            <fieldset>
+                                <legend class="text-secondary">Description</legend>
+                                <div class="form-group">
+                                    <label for="description">Description
+                                        <textarea id="description" name="description" rows="4" placeholder="Describe your item" required></textarea>
+                                    </label>
+                                </div>
+                            </fieldset>
 
-                            <button type="submit" class="button expanded">Submit Donation</button>
+                            <!-- Location Information -->
+                            <fieldset>
+                                <legend class="text-secondary">Location</legend>
+                                <div class="form-group">
+                                    <label for="pickupLocation">Pickup Location</label>
+                                    <div class="location-options">
+                                        <button type="button" class="button small" id="currentLocationBtn">
+                                            <i class="bx bx-current-location"></i> Use Current Location
+                                        </button>
+                                        <button type="button" class="button small" id="selectOnMapBtn">
+                                            <i class="bx bx-map-pin"></i> Select on Map
+                                        </button>
+                                    </div>
+
+                                    <div class="map-container" id="locationMap" style="display: none;">
+                                        <div id="map" style="height: 300px; margin: 1rem 0;"></div>
+                                    </div>
+
+                                    <input type="hidden" id="latitude" name="latitude">
+                                    <input type="hidden" id="longitude" name="longitude">
+                                    
+                                    <label for="pickupAddress">Pickup Address
+                                        <textarea id="pickupAddress" name="pickupAddress" rows="3" required></textarea>
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <!-- Images -->
+                            <fieldset>
+                                <legend class="text-secondary">Images</legend>
+                                <div class="form-group">
+                                    <label for="itemImages">Item Images
+                                        <input type="file" id="itemImages" name="itemImages" multiple accept="image/*">
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <button type="submit" class="button expanded primary">Submit Donation</button>
                         </form>
                     </div>
                 </div>

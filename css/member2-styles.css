@@ -103,6 +103,34 @@ section h2 {
     
     .card {
         margin-bottom: 1rem;
+        border-radius: 8px;
+    }
+    
+    .card-section {
+        padding: 1rem;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Item Grid */
+    .item-grid {
+        gap: 0.5rem;
+    }
+    
+    .item-card {
+        padding: 0.75rem;
+    }
+    
+    /* Search Results */
+    .search-results {
+        margin-top: 1rem;
+    }
+    
+    .filter-section {
+        padding: 0.75rem;
     }
 }
 

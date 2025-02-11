@@ -26,6 +26,10 @@
     <header class="site-header">
         <div class="grid-container">
             <div class="top-bar">
+                <button class="mobile-menu-button" aria-label="Menu">
+                    <i class="bx bx-menu"></i>
+                </button>
+                
                 <div class="top-bar-left">
                     <ul class="menu">
                         <li class="menu-text">Share&Care</li>
@@ -45,7 +49,28 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-content">
+                <ul class="menu vertical">
+                    <li><a href="../index.html"><i class="bx bx-home"></i> Home</a></li>
+                    <li><a href="pages/donate.html"><i class="bx bx-donate-heart"></i> Donate</a></li>
+                    <li><a href="pages/browse.html"><i class="bx bx-search"></i> Browse</a></li>
+                    <li><a href="pages/auth/login.html"><i class="bx bx-user"></i> Login</a></li>
+                    <li><a href="pages/history.html"><i class="bx bx-history"></i> History</a></li>
+                    <li><a href="pages/notifications.html"><i class="bx bx-bell"></i> Notifications</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mobile-menu-overlay"></div>
     </header>
+
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li>Home</li>
+        </ul>
+    </div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -112,7 +137,7 @@
         </div>
     </footer>
 
-    <!-- Foundation JavaScript -->
-   
+    
+
 </body>
 </html> 

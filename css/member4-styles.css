@@ -91,22 +91,32 @@ footer {
 @media screen and (max-width: 640px) {
     footer {
         padding: 1.5rem 0;
-        color: var(--neutral-100);
+        margin-top: 2rem;
+    }
+    
+    .footer-title {
+        margin-top: 1rem;
+        font-size: 1.2rem;
     }
     
     .footer-links {
         margin-bottom: 1.5rem;
-        color: var(--neutral-100);
+        text-align: center;
     }
     
     .social-icons {
         text-align: center;
-        color: var(--neutral-100);
+        margin-bottom: 1rem;
     }
     
     .social-icons a {
         margin: 0 0.5rem;
-        color: var(--neutral-100);
+        font-size: 1.8rem;
+    }
+    
+    .footer-copyright {
+        margin-top: 1rem;
+        text-align: center;
     }
 }
 
