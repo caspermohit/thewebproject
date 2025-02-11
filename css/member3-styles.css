@@ -10,12 +10,30 @@ Description: Styling for Forms and Interactive Elements
     width: 100%;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    border-radius: 4px;
-    border: 1px solid var(--neutral-400);
+
+.form-group label {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
     padding: 0.8rem;
+    border: 1px solid var(--neutral-300);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color);
+    outline: none;
 }
 
 /* Custom Checkbox */
@@ -556,4 +574,36 @@ input[type="password"]:focus {
 
 .auth-card .text-center {
     margin-bottom: 0;
+}
+
+/* Location Selection Styles */
+.location-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.location-options .button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--neutral-200);
+    color: var(--secondary-color);
+    border: 1px solid var(--neutral-300);
+}
+
+.location-options .button:hover {
+    background-color: var(--neutral-300);
+}
+
+.location-options .button i {
+    font-size: 1.2rem;
+}
+
+.map-container {
+    border: 1px solid var(--neutral-300);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
 }

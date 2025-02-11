@@ -30,22 +30,52 @@ header {
 }
 
 .top-bar {
-   
+    background-color: var(--neutral-100);
+    border-bottom: 1px solid var(--neutral-300);
     padding: 1rem 0;
-    width: 100%;
-    position: relative;
-    z-index: 100;
+    margin-bottom: 1rem;
+}
+
+.top-bar .menu {
+    background: none;
+    padding: 0;
 }
 
 .menu-text {
-    
+    color: var(--secondary-color);
     font-weight: 700;
     font-size: 1.5rem;
+    padding: 0;
 }
 
 .menu a {
-    
+    color: var(--secondary-color);
     font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+    background: none;
+}
+
+.top-bar-right .menu {
+    align-items: center;
+}
+
+.top-bar-right .button {
+    margin: 0;
+    margin-left: 1rem;
+}
+
+.top-bar-right .bx {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+}
+
+.top-bar-right .bx:hover {
+    color: var(--primary-color);
 }
 
 /* Primary Button Styles */
@@ -481,4 +511,17 @@ input:focus, select:focus, textarea:focus {
 
 .switch-input:checked:hover ~ .switch-paddle {
     background: var(--primary-dark);
+}
+
+/* Spacing Utilities */
+.spacer-small {
+    height: 1rem;
+}
+
+.spacer-medium {
+    height: 2rem;
+}
+
+.spacer-large {
+    height: 3rem;
 }

@@ -20,6 +20,9 @@
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    
+    <!-- Leaflet Map CSS -->
+
 </head>
 <body>
     <!-- Include Header -->
@@ -46,6 +49,7 @@
             </div>
         </div>
     </header>
+    <div class="spacer-medium"></div>
     <main class="grid-container">
         <div class="grid-x grid-padding-x align-center">
             <div class="cell medium-8">
@@ -54,20 +58,23 @@
                         <h2 class="text-center">Donate an Item</h2>
                         
                         <form id="donationForm">
-                            <!-- Basic Item Details -->
-                            <label for="itemName">Item Name
-                                <input type="text" id="itemName" name="itemName" required>
-                            </label>
+                            <div class="form-group">
+                                <label for="itemName">Item Name
+                                    <input type="text" id="itemName" name="itemName"placeholder="Enter your item name" required>
+                                </label>
+                            </div>
 
-                            <label for="category">Category
-                                <select id="category" name="category" required>
-                                    <option value="">Select a category</option>
-                                    <option value="furniture">Furniture</option>
-                                    <option value="electronics">Electronics</option>
-                                    <option value="clothing">Clothing</option>
-                                    <option value="books">Books</option>
-                                </select>
-                            </label>
+                            <div class="form-group">
+                                <label for="category">Category
+                                    <select id="condition" name="category" required>
+                                        <option value="">Select a category</option>
+                                        <option value="furniture">Furniture</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="clothing">Clothing</option>
+                                        <option value="books">Books</option>
+                                    </select>
+                                </label>
+                            </div>
 
                             <label for="condition">Condition
                                 <select id="condition" name="condition" required>
@@ -83,9 +90,28 @@
                                 <textarea id="description" name="description" rows="4" required></textarea>
                             </label>
 
-                            <label for="pickupAddress">Pickup Address
-                                <textarea id="pickupAddress" name="pickupAddress" rows="3" required></textarea>
-                            </label>
+                            <div class="form-group">
+                                <label for="pickupLocation">Pickup Location</label>
+                                <div class="location-options">
+                                    <button type="button" class="button small" id="currentLocationBtn">
+                                        <i class="bx bx-current-location"></i> Use Current Location
+                                    </button>
+                                    <button type="button" class="button small" id="selectOnMapBtn">
+                                        <i class="bx bx-map-pin"></i> Select on Map
+                                    </button>
+                                </div>
+
+                                <div class="map-container" id="locationMap" style="display: none;">
+                                    <div id="map" style="height: 300px; margin: 1rem 0;"></div>
+                                </div>
+
+                                <input type="hidden" id="latitude" name="latitude">
+                                <input type="hidden" id="longitude" name="longitude">
+                                
+                                <label for="pickupAddress">Pickup Address
+                                    <textarea id="pickupAddress" name="pickupAddress" rows="3" required></textarea>
+                                </label>
+                            </div>
 
                             <label for="itemImages">Item Images
                                 <input type="file" id="itemImages" name="itemImages" multiple accept="image/*">
