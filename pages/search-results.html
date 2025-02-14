@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/member2-styles.css">
     <link rel="stylesheet" href="../css/member3-styles.css">
     <link rel="stylesheet" href="../css/member4-styles.css">
+    <link rel="stylesheet" href="../css/member5-styles.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Helvetica+Neue&display=swap" rel="stylesheet">
@@ -26,88 +27,121 @@
    <header class="site-header">
         <div class="grid-container">
             <div class="top-bar">
+                <button class="mobile-menu-button" aria-label="Menu">
+                    <i class="bx bx-menu"></i>
+                </button>
                 <div class="top-bar-left">
                     <ul class="menu">
-                        <li class="menu-text">ShareCare</li>
+                        <li class="menu-text">Share&Care</li>
                         <li><a href="../index.html"><i class="bx bx-home"></i> Home</a></li>
-                        <li><a href="pages/donate.html"><i class="bx bx-donate-heart"></i> Donate</a></li>
-                        <li><a href="pages/browse.html"><i class="bx bx-search"></i> Browse</a></li>
-                        
-                        
+                        <li><a href="donate.html"><i class="bx bx-donate-heart"></i> Donate</a></li>
+                        <li><a href="browse.html"><i class="bx bx-search"></i> Browse</a></li>
                     </ul>
                 </div>
                 <div class="top-bar-right">
                     <ul class="menu">
-                        <li><a href="pages/auth/index.html" class="button"><i class="bx bx-user"></i> Login In</a></li>
-                        <li><a href="pages/history.html" class="bx bx-history"></a></li>
-                        <li><a href="pages/notifications.html" class="bx bx-bell"></a></li>
+                        <li><a href="auth/login.html" class="button"><i class="bx bx-user"></i> Login In</a></li>
+                        <li><a href="history.html" class="bx bx-history"></a></li>
+                        <li><a href="notifications.html" class="bx bx-bell"></a></li>
                     </ul>
                 </div>
             </div>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-content">
+                <ul class="menu vertical">
+                    <li><a href="../index.html"><i class="bx bx-home"></i> Home</a></li>
+                    <li><a href="donate.html"><i class="bx bx-donate-heart"></i> Donate</a></li>
+                    <li><a href="browse.html"><i class="bx bx-search"></i> Browse</a></li>
+                    <li><a href="auth/login.html"><i class="bx bx-user"></i> Login</a></li>
+                    <li><a href="history.html"><i class="bx bx-history"></i> History</a></li>
+                    <li><a href="notifications.html"><i class="bx bx-bell"></i> Notifications</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mobile-menu-overlay"></div>
     </header>
 
+    <div class="grid-container">
+        <ul class="breadcrumbs">
+            <li><a href="../index.html">Home</a></li>
+            <li>Search Results</li>
+        </ul>
+    </div>
+
     <main class="grid-container">
-        <!-- Search Header -->
         <div class="grid-x grid-padding-x">
-            <div class="cell">
-                <h2 class="section-header">Search Results</h2>
-                <p>Showing results for "<span id="searchQuery">furniture</span>"</p>
+            <!-- Search Filters -->
+            <div class="cell medium-3">
+                <!-- Add filter options -->
             </div>
-        </div>
-
-        <!-- Results Grid -->
-        <div class="grid-x grid-padding-x">
-            <!-- Item Card -->
-            <div class="cell medium-4">
-                <div class="card">
-                    <img src="/images/items/item1.jpg" alt="Item Image">
-                    <div class="card-section">
-                        <h4>Office Chair</h4>
-                        <p>Condition: Good</p>
-                        <p>Location: Downtown</p>
-                        <a href="/pages/item-details.html" class="button expanded">View Details</a>
+            
+            <!-- Search Results -->
+            <div class="cell medium-9">
+                <!-- Search Header -->
+                <div class="grid-x grid-padding-x">
+                    <div class="cell">
+                        <h2 class="section-header">Search Results</h2>
+                        <p>Showing results for "<span id="searchQuery">furniture</span>"</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item Card -->
-            <div class="cell medium-4">
-                <div class="card">
-                    <img src="/images/items/item2.jpg" alt="Item Image">
-                    <div class="card-section">
-                        <h4>Desk Lamp</h4>
-                        <p>Condition: Like New</p>
-                        <p>Location: Westside</p>
-                        <a href="/pages/item-details.html" class="button expanded">View Details</a>
+                <!-- Results Grid -->
+                <div class="grid-x grid-padding-x">
+                    <!-- Item Card -->
+                    <div class="cell medium-4">
+                        <div class="card">
+                            <img src="../images/items/item1.jpg" alt="Item Image">
+                            <div class="card-section">
+                                <h4>Office Chair</h4>
+                                <p>Condition: Good</p>
+                                <p>Location: Downtown</p>
+                                <a href="item-details.html" class="button expanded">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item Card -->
+                    <div class="cell medium-4">
+                        <div class="card">
+                            <img src="../images/items/item2.jpg" alt="Item Image">
+                            <div class="card-section">
+                                <h4>Desk Lamp</h4>
+                                <p>Condition: Like New</p>
+                                <p>Location: Westside</p>
+                                <a href="item-details.html" class="button expanded">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item Card -->
+                    <div class="cell medium-4">
+                        <div class="card">
+                            <img src="../images/items/item3.jpg" alt="Item Image">
+                            <div class="card-section">
+                                <h4>Bookshelf</h4>
+                                <p>Condition: Fair</p>
+                                <p>Location: Eastside</p>
+                                <a href="item-details.html" class="button expanded">View Details</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Item Card -->
-            <div class="cell medium-4">
-                <div class="card">
-                    <img src="/images/items/item3.jpg" alt="Item Image">
-                    <div class="card-section">
-                        <h4>Bookshelf</h4>
-                        <p>Condition: Fair</p>
-                        <p>Location: Eastside</p>
-                        <a href="/pages/item-details.html" class="button expanded">View Details</a>
+                <!-- Pagination -->
+                <div class="grid-x grid-padding-x">
+                    <div class="cell">
+                        <ul class="pagination text-center">
+                            <li class="disabled">Previous</li>
+                            <li class="current">1</li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">Next</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Pagination -->
-        <div class="grid-x grid-padding-x">
-            <div class="cell">
-                <ul class="pagination text-center">
-                    <li class="disabled">Previous</li>
-                    <li class="current">1</li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">Next</a></li>
-                </ul>
             </div>
         </div>
     </main>
@@ -117,7 +151,7 @@
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell medium-4">
-                    <h4 class="footer-title">About ShareCare</h4>
+                    <h4 class="footer-title">About Share&Care</h4>
                     <p>Connecting communities through meaningful donations.</p>
                 </div>
                 <div class="cell medium-4">
@@ -138,7 +172,7 @@
                 </div>
                 <div class="cell">
                     <div class="footer-copyright text-center">
-                        <p>&copy; 2024 ShareCare. All rights reserved.</p>
+                        <p>&copy; 2024 Share&Care. All rights reserved.</p>
                     </div>
                 </div>
             </div>

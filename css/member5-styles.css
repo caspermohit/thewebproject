@@ -1,0 +1,275 @@
+/* 
+Author: sudheer chavali
+Description: Global Theme, Typography, Utility Classes
+*/
+
+/* Basic Variables */
+:root {
+    /* Main Colors */
+    --primary: #43aa8b;    /* Green */
+    --primary-dark: #368c72;
+    --primary-light: #6abba2;
+    
+    --secondary-color: #374b43;  /* green */
+    --secondary-dark: #002d80;
+    --secondary-light: #1a57c4;
+    
+    /* Basic Colors */
+    --white: #fff;
+    --black: #000;
+    --gray-light: #f8f9fa;
+    --gray: #e9ecef;
+    --gray-dark: #6c757d;
+    
+    /* Status Colors */
+    --success: #43aa8b;    /* Using primary green */
+    --warning: #f0ad4e;    /* Orange */
+    --danger: #d9534f;     /* Red */
+    --info: #003dac;       /* Using secondary blue */
+    
+    /* Spacing */
+    --gap: 20px;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--black);
+    background: var(--gray-light);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.4;
+}
+
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 2rem; font-weight: 600; }
+h3 { font-size: 1.75rem; font-weight: 600; }
+h4 { font-size: 1.5rem; font-weight: 500; }
+h5 { font-size: 1.25rem; font-weight: 500; }
+h6 { font-size: 1rem; font-weight: 500; }
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+
+/* Color System */
+:root {
+    /* Brand Colors */
+    --primary-color: #43aa8b;
+    --primary-light: #6abba2;
+    --primary-dark: #368c72;
+    
+    --secondary-color: #374b43;
+    --secondary-light: #4a6359;
+    --secondary-dark: #2a3a33;
+    
+    /* Neutral Colors */
+    --neutral-100: #ffffff;
+    --neutral-200: #f8f9fa;
+    --neutral-300: #e9ecef;
+    --neutral-400: #dee2e6;
+    --neutral-500: #adb5bd;
+    --neutral-600: #6c757d;
+    --neutral-700: #495057;
+    --neutral-800: #343a40;
+    --neutral-900: #212529;
+
+    /* Semantic Colors */
+    --success-color: #43aa8b;
+    --warning-color: #f0ad4e;
+    --danger-color: #d9534f;
+    --info-color: #43aa8b;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Transitions */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 2px 4px rgba(0,0,0,0.15);
+    --shadow-lg: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Global Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography */
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--neutral-800);
+    background-color: var(--neutral-200);
+    font-size: 16px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.4;
+}
+
+h1 { font-size: 2.5rem; font-weight: 700; }
+h2 { font-size: 2rem; font-weight: 600; }
+h3 { font-size: 1.75rem; font-weight: 600; }
+h4 { font-size: 1.5rem; font-weight: 500; }
+h5 { font-size: 1.25rem; font-weight: 500; }
+h6 { font-size: 1rem; font-weight: 500; }
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Utility Classes */
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
+.text-warning { color: var(--warning); }
+.text-info { color: var(--info); }
+
+.text-right { text-align: right; }
+.text-bold { font-weight: 600; }
+.text-small { font-size: 0.875rem; }
+
+/* Responsive Typography */
+@media screen and (max-width: 640px) {
+    body { font-size: 14px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    h5 { font-size: 1.1rem; }
+    h6 { font-size: 1rem; }
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--neutral-100);
+    padding: 3rem 0;
+    margin-top: 3rem;
+}
+
+.footer-title {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: var(--neutral-100);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* Theme Variations */
+.theme-light {
+    background-color: var(--neutral-100);
+    color: var(--neutral-800);
+}
+
+.theme-dark {
+    background-color: var(--neutral-800);
+    color: var(--neutral-100);
+}
+
+/* Buttons */
+.btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background: var(--secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-dark);
+    opacity: 0.9;
+}
+
+/* Backgrounds */
+.bg-primary { background: var(--primary); }
+.bg-secondary { background: var(--secondary); }
+.bg-light { background: var(--gray-light); }
+.bg-dark { background: var(--secondary-dark); } 

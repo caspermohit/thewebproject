@@ -1,6 +1,6 @@
 /* 
-Author: Team Member 2
-Description: Styling for Cards and Content Sections
+Author: rupesh gaur
+Description: Card Layouts, Interactive Components
 */
 
 /* Color System */
@@ -42,37 +42,121 @@ Description: Styling for Cards and Content Sections
     margin-bottom: 3rem;
 }
 
-/* Card Styles */
+/* Card Base Styles */
 .card {
-    background: var(--neutral-100);
-    border: 1px solid var(--neutral-300);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-    margin-bottom: 2rem;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .card-section {
-    padding: 1.5rem;
+    padding: var(--spacing-md);
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: var(--neutral-100);
 }
 
 .card-section h4 {
     color: var(--secondary-color);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-sm);
 }
 
 .card-section p {
     color: var(--neutral-600);
     line-height: 1.6;
+}
+
+/* Interactive Components */
+.interactive-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(67, 170, 139, 0.1);
+    opacity: 0;
+    transition: opacity var(--transition-fast) ease;
+}
+
+.interactive-card:hover::before {
+    opacity: 1;
+}
+
+/* Component Variations */
+.card-horizontal {
+    flex-direction: row;
+}
+
+.card-compact {
+    padding: var(--spacing-sm);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 640px) {
+    .card {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .card-horizontal {
+        flex-direction: column;
+    }
+}
+
+/* Grid Layout */
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.grid-x {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(-1 * var(--spacing-sm));
+}
+
+.cell {
+    padding: 0 var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Authentication Card Styles */
+.auth-card {
+    max-width: 400px;
+    margin: var(--spacing-lg) auto;
+}
+
+.auth-card .card {
+    border-color: var(--neutral-300);
+    box-shadow: var(--shadow-md);
+}
+
+.auth-card .card-section {
+    padding: var(--spacing-lg);
+}
+
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    color: var(--secondary-color);
+    font-weight: 600;
 }
 
 /* Section Styles */
@@ -102,12 +186,11 @@ section h2 {
     }
     
     .card {
-        margin-bottom: 1rem;
-        border-radius: 8px;
+        margin-bottom: var(--spacing-sm);
     }
     
     .card-section {
-        padding: 1rem;
+        padding: var(--spacing-sm);
     }
     
     .card-title {
@@ -139,9 +222,6 @@ section h2 {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    display: block;
 }
 
 /* Hero Background Image */
@@ -310,22 +390,6 @@ textarea {
     overflow-y: auto;
 }
 
-.item-card {
-    padding: 0.75rem;
-    border-bottom: 1px solid var(--neutral-300);
-    transition: background-color 0.2s ease;
-}
-
-.item-card:hover {
-    background-color: var(--neutral-200);
-    cursor: pointer;
-}
-
-.item-card img {
-    border-radius: 4px;
-    object-fit: cover;
-}
-
 .item-card h6 {
     margin: 0;
     color: var(--secondary-color);
@@ -387,44 +451,81 @@ textarea {
     color: var(--secondary-dark);
 }
 
-/* Auth Form Styles */
-.auth-card {
-    max-width: 400px;
-    margin: 2rem auto;
+/* Form Styles */
+/* Input Fields */
+/* Form Validation */
+/* Card Layouts */
+/* Interactive Components */
+/* Button Variations */
+
+/* Grid Layouts */
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
 }
 
-.auth-card .card {
-    border-color: var(--neutral-300);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.grid-x {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(-1 * var(--spacing-sm));
 }
 
-.auth-card .card-section {
-    padding: 2rem;
+.cell {
+    padding: 0 var(--spacing-sm);
 }
 
-.auth-card h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--secondary-color);
-    font-weight: 600;
+/* Responsive Adjustments */
+@media screen and (max-width: 640px) {
+    .grid-x {
+        margin: 0 calc(-1 * var(--spacing-xs));
+    }
+
+    .cell {
+        padding: 0 var(--spacing-xs);
+    }
 }
 
-.auth-card fieldset {
-    border: none;
-    padding: 0;
-    margin: 0 0 1.5rem 0;
+/* Card and Component Styles */
+.card {
+    background: var(--neutral-100);
+    border: 1px solid var(--neutral-300);
+    border-radius: 4px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.3s;
 }
 
-.auth-card legend {
-    color: var(--secondary-color);
-    font-weight: 600;
-    margin-bottom: 1rem;
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
-.auth-card .text-primary {
-    color: var(--primary-color);
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
 }
 
-.auth-card .text-secondary {
-    color: var(--secondary-color);
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Images */
+.img-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: var(--gray-dark);
 } 

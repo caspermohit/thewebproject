@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/member2-styles.css">
     <link rel="stylesheet" href="../css/member3-styles.css">
     <link rel="stylesheet" href="../css/member4-styles.css">
+    <link rel="stylesheet" href="../css/member5-styles.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Helvetica+Neue&display=swap" rel="stylesheet">
@@ -38,7 +39,7 @@
                 </div>
                 <div class="top-bar-right">
                     <ul class="menu">
-                        <li><a href="/pages/auth/" class="button"><i class="bx bx-user"></i> Login In</a></li>
+                        <li><a href="/pages/auth/login.html" class="button"><i class="bx bx-user"></i> Login In</a></li>
                         <li><a href="/pages/history.html" class="bx bx-history"></a></li>
                         <li><a href="/pages/notifications.html" class="bx bx-bell"></a></li>
                     </ul>
@@ -62,8 +63,8 @@
                 <!-- History Tabs -->
                 <ul class="tabs" data-tabs id="history-tabs">
                     <li class="tabs-title is-active"><a href="#donations">Donations</a></li>
-                    <li class="tabs-title"><a href="#requests">Requests</a></li>
-                    <li class="tabs-title"><a href="#pending">Pending Requests</a></li>
+                    <li class="tabs-title" ><a href="#requests">Requests</a></li>
+                    <li class="tabs-title "><a href="#pending">Pending Requests</a></li>
                 </ul>
 
                 <!-- Tabs Content -->
@@ -84,8 +85,23 @@
                                 <tr>
                                     <td>Desk Lamp</td>
                                     <td>2024-01-20</td>
-                                    <td>Completed</td>
+                                    <td>
+                                        <button class=" text-success">Completed</button>
+                                    </td>
                                     <td>Jane Smith</td>
+                                    <td>
+                                        <a class="button tiny" href="/pages/item-details.html">View Details</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>couch</td>
+                                    <td>2025-01-20</td>
+                                    <td >
+                                        <button class=" text-warning">Waiting for pickup</button>
+                                    </td>
+                                    <td>mohit shah</td>
                                     <td>
                                         <a class="button tiny" href="/pages/item-details.html">View Details</a>
                                     </td>
@@ -149,6 +165,7 @@
                 </div>
 
                 <!-- Pagination -->
+                <div class="spacer-medium"></div>
                 <ul class="pagination text-center">
                     <li class="disabled">Previous</li>
                     <li class="current">1</li>

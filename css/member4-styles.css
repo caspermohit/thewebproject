@@ -1,142 +1,52 @@
 /* 
-Author: Team Member 4
-Description: Styling for Footer and Typography
+Author: goutham yadav
+Description: Global Theme, Typography, Utility Classes
 */
 
-/* Color System */
-:root {
-    /* Brand Colors */
-    --primary-color: #43aa8b;
-    --primary-light: #6abba2;
-    --primary-dark: #368c72;
-    
-    --secondary-color: #374b43;
-    --secondary-light: #4a6359;
-    --secondary-dark: #2a3a33;
-    
-    /* Neutral Colors */
-    --neutral-100: #ffffff;
-    --neutral-200: #f8f9fa;
-    --neutral-300: #e9ecef;
-    --neutral-400: #dee2e6;
-    --neutral-500: #adb5bd;
-    --neutral-600: #6c757d;
-    --neutral-700: #495057;
-    --neutral-800: #343a40;
-    --neutral-900: #212529;
+/* Dashboard */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-/* Footer Styles */
-footer {
-    background-color: var(--secondary-color);
-    color: var(--neutral-100);
-    padding: 3rem 0;
-    margin-top: 3rem;
-    border-top: 4px solid var(--primary-color);
+.profile {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
 }
 
-.footer-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.profile-title {
+    color: var(--secondary);
+    margin-bottom: 10px;
 }
 
-.footer-links li {
-    margin-bottom: 0.5rem;
-    transition: transform 0.3s ease;
+.profile-text {
+    color: var(--gray-dark);
 }
 
-.footer-links li:hover {
-    transform: translateX(5px);
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
-.footer-links a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 0.9rem;
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
-.footer-links a:hover {
-    color: var(--primary-light);
+.stat-number {
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: bold;
 }
 
-/* Social Icons */
-.social-icons {
-    margin-top: 1rem;
+.stat-label {
+    color: var(--gray-dark);
+    font-size: 14px;
 }
-
-.social-icons a {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: var(--neutral-100);
-    transform: translateY(-3px);
-}
-
-/* Footer Copyright */
-.footer-copyright {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--neutral-400);
-    font-size: 0.8rem;
-    color: var(--neutral-600);
-}
-
-/* Responsive Footer */
-@media screen and (max-width: 640px) {
-    footer {
-        padding: 1.5rem 0;
-        margin-top: 2rem;
-    }
-    
-    .footer-title {
-        margin-top: 1rem;
-        font-size: 1.2rem;
-    }
-    
-    .footer-links {
-        margin-bottom: 1.5rem;
-        text-align: center;
-    }
-    
-    .social-icons {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-    
-    .social-icons a {
-        margin: 0 0.5rem;
-        font-size: 1.8rem;
-    }
-    
-    .footer-copyright {
-        margin-top: 1rem;
-        text-align: center;
-    }
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.4;
-}
-
-p {
-    font-family: 'Open Sans', Arial, sans-serif;
-    line-height: 1.6;
-    color:var(--primary-color);
-}
-
-
-/* Responsive Typography */
-@media screen and (max-width: 640px) {
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.75rem; }
-    h3 { font-size: 1.5rem; }
-    p { font-size: 1rem; }
-} 

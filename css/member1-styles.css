@@ -1,7 +1,90 @@
 /* 
 Author: Mohit Shah
-Description: Styling for Header, Navigation, and Primary Buttons
+Description: Core Layout, Navigation, and Responsive Grid
 */
+
+/* Global Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container and Grid System */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.grid-x {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(-1 * var(--spacing-sm));
+}
+
+.cell {
+    padding: 0 var(--spacing-sm);
+    width: 100%;
+}
+
+/* Responsive Grid Columns */
+.small-12 { width: 100%; }
+.medium-4 { width: 33.33%; }
+.large-3 { width: 25%; }
+
+/* Navigation Styles */
+.navbar {
+    padding: var(--space-md);
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-menu {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: var(--secondary);
+    transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: var(--primary);
+}
+
+/* Mobile Menu */
+.mobile-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--neutral-100);
+    z-index: 1000;
+    transition: left var(--transition-normal) ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+}
 
 /* Global Box Model Reset */
 *, *::before, *::after {
@@ -65,29 +148,76 @@ header {
 }
 
 .top-bar-right .button {
-    margin: 0;
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s;
     margin-left: 1rem;
 }
 
+.top-bar-right .button:hover {
+    background: var(--primary-dark);
+    opacity: 0.9;
+}
+
+.top-bar-right .button i {
+    font-size: 1.1rem;
+}
+
+/* Icon Links in Header */
 .top-bar-right .bx {
     font-size: 1.25rem;
-    color: var(--secondary-color);
+    color: var(--neutral-800);
+    transition: color 0.3s ease;
 }
 
 .top-bar-right .bx:hover {
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 /* Primary Button Styles */
 .button {
-    background-color: var(--primary-color);
-    border-radius: 4px;
-    padding: 0.85em 1.5em;
-    display: inline-block;
-    margin: 0;
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 20px;
     border: none;
-    text-align: center;
-    line-height: 1;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.button:hover {
+    background: var(--primary-dark);
+}
+
+.button.secondary {
+    background: var(--secondary);
+}
+
+.button.secondary:hover {
+    background: var(--secondary-dark);
+}
+
+/* Small Button Variant */
+.button.small {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+/* Top Bar Button Specific */
+.top-bar-right .button {
+    margin-left: 1rem;
+}
+
+.top-bar-right .button i {
+    font-size: 1.1rem;
 }
 
 /* Responsive Design */
@@ -343,54 +473,12 @@ img {
     padding: 0 1rem;
 } 
 
-/* Color System */
-:root {
-    /* Brand Colors */
-    --primary-color: #43aa8b;
-    --primary-light: #6abba2;
-    --primary-dark: #368c72;
-    
-    --secondary-color: #374b43;
-    --secondary-light: #4a6359;
-    --secondary-dark: #2a3a33;
-    
-    /* Neutral Colors */
-    --neutral-100: #ffffff;
-    --neutral-200: #f8f9fa;
-    --neutral-300: #e9ecef;
-    --neutral-400: #dee2e6;
-    --neutral-500: #adb5bd;
-    --neutral-600: #6c757d;
-    --neutral-700: #495057;
-    --neutral-800: #343a40;
-    --neutral-900: #212529;
-    
-    /* State Colors */
-    --success-color: #28a745;
-    --warning-color: #ffc107;
-    --danger-color: #dc3545;
-    --info-color: #17a2b8;
-}
-
-/* Typography Colors */
-body {
-    color: var(--neutral-800);
-    background-color: var(--neutral-200);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--secondary-color);
-}
-
-
-
 /* Link Colors */
 a {
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
-
 
 a:hover {
     color: var(--primary-dark);
@@ -466,13 +554,12 @@ input:focus, select:focus, textarea:focus {
 }
 
 .button.secondary {
-    background-color: var(--secondary-color);
-    color: var(--neutral-100);
-    transition: background-color 0.3s ease;
+    background: var(--secondary);
 }
 
 .button.secondary:hover {
-    background-color: var(--secondary-dark);
+    background: var(--secondary-dark);
+    opacity: 0.9;
 }
 
 /* Alert/Message Colors */
@@ -590,102 +677,60 @@ input:focus, select:focus, textarea:focus {
     }
 }
 
-/* Mobile Menu Styles */
-.mobile-menu-button {
-    display: none;
-    position: relative;
-    padding: 0.5rem;
-    margin: 0;
-    border: none;
-    background: none;
-    cursor: pointer;
+/* Navigation */
+.nav {
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.mobile-menu-button i {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-}
-
-/* CSS-only Mobile Menu */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 80%;
-    height: 100vh;
-    background: var(--neutral-100);
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
-
-.mobile-menu-button:focus + .mobile-menu,
-.mobile-menu:hover {
-    left: 0;
-}
-
-.mobile-menu-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-    cursor: pointer;
-}
-
-/* Mobile Menu Content */
-.mobile-menu-content {
-    padding: 2rem 1rem;
-    padding-top: 4rem;
-}
-
-.mobile-menu-content .menu {
+.nav-menu {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    gap: 20px;
 }
 
-.mobile-menu-content .menu li {
-    margin: 0.5rem 0;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+.nav-link {
+    color: var(--secondary);
 }
 
-.mobile-menu-content .menu li:hover {
-    background: var(--neutral-200);
+.nav-link:hover {
+    color: var(--primary);
 }
 
-.mobile-menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 999;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 640px) {
-    .top-bar .menu {
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .nav-menu {
         display: none;
     }
-
-    .mobile-menu-button {
+    
+    .nav-toggle {
         display: block;
     }
+}
 
-    .mobile-menu {
-        display: block;
-    }
+/* Pagination Styles */
+.pagination {
+    margin-top: 20px;
+}
 
-    .mobile-menu-button:focus ~ .mobile-menu-overlay,
-    .mobile-menu:hover ~ .mobile-menu-overlay {
-        display: block;
-    }
+.pagination li {
+    color: var(--gray-dark);
+}
 
-    .menu-text {
-        font-size: 1.2rem;
-    }
+.pagination .current {
+    background: var(--primary);
+}
+
+.pagination a {
+    color: var(--secondary);
+    transition: background-color 0.3s;
+}
+
+.pagination a:hover {
+    background: var(--primary-light);
+    color: var(--white);
+}
+
+.pagination .disabled {
+    color: var(--gray);
 }
