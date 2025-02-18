@@ -141,7 +141,7 @@
 
 .auth-card .checkbox-label {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-sm);
     cursor: pointer;
     margin-top: var(--space-sm);
@@ -150,9 +150,21 @@
     border-radius: var(--radius-md);
 }
 
+.auth-card .checkbox-label.no-bg {
+    background-color: transparent;
+    padding: 0;
+    margin-top: 0;
+}
+
 .auth-card .checkbox-label input[type="checkbox"] {
-    margin-top: 0.2rem;
-    height: auto;
+    margin: 0;
+    height: 16px;
+    width: 16px;
+}
+
+.auth-card .checkbox-label span {
+    color: var(--gray-700);
+    font-size: 0.9rem;
 }
 
 .auth-card .form-actions {
