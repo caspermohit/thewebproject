@@ -192,9 +192,7 @@ p {
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
 }
-.cell:hover {
-    color: var(--secondary-color);
-}
+
 
 /* Foundation Responsive Classes */
 @media screen and (min-width: 640px) {

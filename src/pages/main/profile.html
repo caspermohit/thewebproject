@@ -60,6 +60,18 @@
                     <div class="card-section">
                         <h3 class="card-title">Profile Information</h3>
                         <form>
+                            <div class="profile-picture-upload text-center margin-bottom-md">
+                                <div class="profile-image-container">
+                                    <img src="../../assets/images/hero/user1.jpeg" alt="Profile Picture" id="profileImage" class="profile-image">
+                                    <label for="profilePicture" class="profile-upload-label">
+                                        <i class="bx bx-camera"></i>
+                                        <span class="visually-hidden">Change Profile Picture</span>
+                                    </label>
+                                </div>
+                                <input type="file" id="profilePicture" name="profilePicture" accept="image/*" class="hide">
+                                <p class="help-text">Click the camera icon to change profile picture</p>
+                            </div>
+
                             <label for="fullName">Full Name
                                 <input type="text" id="fullName" name="fullName">
                             </label>
@@ -69,7 +81,7 @@
                             <label for="location">Location
                                 <input type="text" id="location" name="location">
                             </label>
-                            <button type="submit" class="button">Save Changes</button>
+                            <button type="submit" class="button expanded">Save Changes</button>
                         </form>
                     </div>
                 </div>

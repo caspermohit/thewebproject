@@ -7,20 +7,14 @@
     flex-direction: column;
     background: var(--white);
     border: 1px solid var(--gray-200);
-    border-radius: var(--radius-md);
-    margin-bottom: var(--space-md);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-xs);
     box-shadow: var(--shadow-sm);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
 }
 
 .card img {
     width: 100%;
-    height: 160px; /* Even more compact */
+    height: 120px;
     object-fit: cover;
     object-position: center;
 }
@@ -29,39 +23,40 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: var(--space-sm);
+    padding: var(--space-xs) var(--space-xs);
 }
 
 .card-section h4 {
     margin-bottom: var(--space-xs);
-    font-size: 1rem; /* Smaller font size */
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--gray-800);
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
 .card-section p {
     margin-bottom: var(--space-xs);
     color: var(--gray-600);
-    font-size: 0.875rem; /* Smaller font size */
-    line-height: 1.4;
+    font-size: 0.75rem;
+    line-height: 1.2;
 }
 
 .card-section .button {
     margin-top: auto;
     margin-bottom: 0;
-    padding: var(--space-xs) var(--space-sm);
-    font-size: 0.875rem;
-    height: 32px; /* Fixed height for consistency */
+    padding: var(--space-xs) var(--space-xs);
+    font-size: 0.75rem;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .card-title {
-    color: var(--neutral-800);
-    margin-bottom: var(--space-md);
+    color: var(--gray-800);
+    margin-bottom: var(--space-xs);
     font-weight: 600;
+    font-size: 0.85rem;
 }
 
 /* Auth Card Styles */
@@ -184,12 +179,11 @@
     align-items: center;
     justify-content: center;
     background-color: var(--primary-color);
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .auth-card .button:hover {
     background-color: var(--primary-color-dark);
-    transform: translateY(-1px);
 }
 
 .auth-card .auth-links {
@@ -246,16 +240,12 @@
 }
 
 .auth-card .social-login .button:hover {
-    background: var(--gray-50);
+    background: var(--gray-100);
 }
 
 /* Featured Item Card */
 .featured-card {
-    transition: transform var(--transition-normal);
-}
-
-.featured-card:hover {
-    transform: translateY(-5px);
+    transition: none;
 }
 
 .featured-card img {
@@ -420,4 +410,68 @@
     margin: var(--space-lg) 0;
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
+}
+
+/* Profile Picture Upload Styles */
+.profile-picture-upload {
+    position: relative;
+    margin-bottom: var(--space-lg);
+}
+
+.profile-image-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-upload-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: var(--space-xs);
+    color: var(--white);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.profile-upload-label:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.profile-upload-label i {
+    font-size: 1.5rem;
+}
+
+.hide {
+    display: none;
+}
+
+.help-text {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+    margin-top: var(--space-xs);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 } 
