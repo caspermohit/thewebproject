@@ -1,18 +1,61 @@
 /* Card Molecules */
 .card {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     background: var(--white);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-md);
-    padding: var(--space-lg);
     margin-bottom: var(--space-md);
     box-shadow: var(--shadow-sm);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
 
+.card img {
+    width: 100%;
+    height: 160px; /* Even more compact */
+    object-fit: cover;
+    object-position: center;
+}
 
 .card-section {
-    padding: var(--space-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-sm);
+}
+
+.card-section h4 {
+    margin-bottom: var(--space-xs);
+    font-size: 1rem; /* Smaller font size */
+    font-weight: 600;
+    color: var(--gray-800);
+    line-height: 1.3;
+}
+
+.card-section p {
+    margin-bottom: var(--space-xs);
+    color: var(--gray-600);
+    font-size: 0.875rem; /* Smaller font size */
+    line-height: 1.4;
+}
+
+.card-section .button {
+    margin-top: auto;
+    margin-bottom: 0;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.875rem;
+    height: 32px; /* Fixed height for consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-title {
@@ -21,25 +64,177 @@
     font-weight: 600;
 }
 
+/* Auth Card Styles */
 .auth-card {
-    max-width: 500px;
-    margin: var(--space-xl) auto;
+    max-width: 800px;
+    margin: var(--space-xxl) auto;
+    padding: 0 var(--space-md);
 }
 
 .auth-card .card {
-    border-radius: 16px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-    border: 1px solid var(--neutral-100);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: none;
+    background: var(--white);
 }
 
 .auth-card .card-section {
-    padding: var(--space-xl);
+    padding: var(--space-xl) var(--space-xxl);
 }
 
 .auth-card h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+    color: var(--gray-800);
+    font-weight: 600;
+    text-align: center;
+}
+
+.auth-card .section-title {
+    font-size: 1.25rem;
+    color: var(--gray-800);
+    font-weight: 600;
     margin-bottom: var(--space-lg);
-    color: var(--neutral-800);
-    font-weight: 700;
+    padding-bottom: var(--space-xs);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.auth-card .form-section {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    border: 1px solid var(--gray-200);
+    margin-bottom: var(--space-lg);
+}
+
+.auth-card .form-group {
+    margin-bottom: var(--space-lg);
+}
+
+.auth-card .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.auth-card label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: var(--space-xs);
+    display: block;
+}
+
+.auth-card input {
+    padding: var(--space-md);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    height: 48px;
+    background-color: var(--white);
+    width: 100%;
+}
+
+.auth-card input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(67, 170, 139, 0.1);
+}
+
+.auth-card .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    cursor: pointer;
+    margin-top: var(--space-sm);
+    padding: var(--space-sm);
+    background-color: var(--gray-50);
+    border-radius: var(--radius-md);
+}
+
+.auth-card .checkbox-label input[type="checkbox"] {
+    margin-top: 0.2rem;
+    height: auto;
+}
+
+.auth-card .form-actions {
+    background: var(--gray-50);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-xl);
+}
+
+.auth-card .button {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1rem;
+    font-weight: 500;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+.auth-card .button:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-1px);
+}
+
+.auth-card .auth-links {
+    text-align: center;
+    margin-top: var(--space-md);
+}
+
+.auth-card .auth-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.auth-card .auth-links a:hover {
+    color: var(--primary-color-dark);
+}
+
+.auth-card .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: var(--space-lg) 0;
+    color: var(--gray-500);
+    font-size: 0.9rem;
+}
+
+.auth-card .divider::before,
+.auth-card .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.auth-card .divider span {
+    padding: 0 var(--space-sm);
+}
+
+.auth-card .social-login {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.auth-card .social-login .button {
+    flex: 1;
+    background: var(--white);
+    color: var(--gray-700);
+    border: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.auth-card .social-login .button:hover {
+    background: var(--gray-50);
 }
 
 /* Featured Item Card */

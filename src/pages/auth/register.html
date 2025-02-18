@@ -59,55 +59,59 @@
                     <div class="card-section">
                         <h2 class="text-center">Create Account</h2>
                         
-                        <form id="registerForm">
-                            <div class="grid-x grid-margin-x">
-                                
-                                    <div class="form-group">
-                                        <label for="firstName">First Name
-                                            <input type="text" id="firstName" name="firstName" placeholder="firstName" required>
-                                        </label>
-                                    </div>
-                                
-                              
-                                    <div class="form-group">
-                                        <label for="lastName">Last Name
-                                            <input type="text" id="lastName" name="lastName" placeholder="lastName" required>
-                                        </label>
-                                    </div>
-                               
+                        <form id="registerForm" class="margin-top-lg">
+                            <div class="form-section margin-bottom-lg">
+                                <h4 class="section-title">Personal Information</h4>
+                                <div class="form-group">
+                                    <label for="firstName">First Name
+                                        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name
+                                        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                    </label>
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="email">Email
-                                    <input type="email" id="email" name="email" placeholder="email" required>
-                                </label>
+                            <div class="form-section margin-bottom-lg">
+                                <h4 class="section-title">Account Details</h4>
+                                <div class="form-group">
+                                    <label for="email">Email Address
+                                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password
+                                        <input type="password" id="password" name="password" placeholder="Create a password" required>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm Password
+                                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                                    </label>
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="password">Password
-                                    <input type="password" id="password" name="password" placeholder="password" required>
-                                </label>
+                            <div class="form-section margin-bottom-lg">
+                                <h4 class="section-title">Terms & Conditions</h4>
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="terms" required>
+                                        <span>I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a></span>
+                                    </label>
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="confirmPassword">Confirm Password
-                                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="confirmPassword" required>
-                                </label>
+                            <div class="form-actions margin-top-xl">
+                                <button type="submit" class="button expanded">Create Account</button>
+                                <div class="text-center margin-top-md">
+                                    <p>Already have an account? <a href="login.html" class="text-primary">Login</a></p>
+                                </div>
                             </div>
-
-                            <div class="form-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="terms" placeholder="terms"  required>
-                                    I agree to the <a href="#" class="facebook">Terms of Service</a> and <a href="#">Privacy Policy</a>
-                                </label>
-                            </div>
-
-                            <button type="submit" class="button expanded">Create Account</button>
                         </form>
-
-                        <div class="text-center margin-top">
-                            <p>Already have an account? <a href="../../../src/pages/auth/login.html">Login</a></p>
-                        </div>
                     </div>
                 </div>
             </div>

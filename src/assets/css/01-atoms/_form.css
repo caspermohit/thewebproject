@@ -41,4 +41,35 @@ label {
 
 ::placeholder {
     color: var(--neutral-300);
+}
+
+.map-search {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.map-search input[type="text"] {
+    border: none;
+    margin-bottom: 0;
+    flex: 1;
+}
+
+.map-search .input-group-button {
+    margin: 0;
+}
+
+.map-search .input-group-button .button {
+    margin: 0;
+    border-radius: 0;
+    height: 100%;
+    padding: var(--space-sm) var(--space-md);
+}
+
+.map-search input[type="text"]:focus {
+    box-shadow: none;
+    border: none;
 } 

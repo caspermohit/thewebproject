@@ -52,11 +52,11 @@
         <div class="grid-x grid-padding-x">
             <!-- Conversations List -->
             <div class="cell medium-4">
-                <div class="input-group">
+                <div class="input-group margin-bottom-md">
                     <input class="input-group-field" type="search" placeholder="Search messages...">
                 </div>
 
-                <div class="conversation-list chat-container">
+                <div class="conversation-list">
                     <!-- Active Conversation -->
                     <div class="conversation-item active">
                         <a href="#conversation1">
@@ -87,43 +87,45 @@
 
             <!-- Chat Area -->
             <div class="cell medium-8">
-                <!-- Chat Header -->
-                <div class="card">
-                    <div class="card-section">
-                        <h4 class="card-title">Dining Table</h4>
-                        <p>Conversation with John Doe</p>
-                    </div>
-                </div>
-
-                <!-- Chat Messages -->
-                <div class="chat-messages">
-                    <!-- Sender Message -->
-                    <div class="message sender">
-                        <div class="message-content">
-                            <p>Hi, I'm interested in the dining table you posted. Is it still available?</p>
-                            <small>10:30 AM</small>
+                <div class="chat-container">
+                    <!-- Chat Header -->
+                    <div class="card margin-bottom-md">
+                        <div class="card-section">
+                            <h4 class="card-title margin-bottom-0">Dining Table</h4>
+                            <p class="margin-bottom-0">Conversation with John Doe</p>
                         </div>
                     </div>
 
-                    <!-- Receiver Message -->
-                    <div class="message receiver">
-                        <div class="message-content">
-                            <p>Yes, it's still available! Would you like to arrange a pickup?</p>
-                            <small>10:35 AM</small>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Message Input -->
-                <div class="chat-input">
-                    <form id="messageForm">
-                        <div class="input-group">
-                            <input class="input-group-field" type="text" placeholder="Type your message...">
-                            <div class="input-group-button">
-                                <button type="submit" href="/src/pages/main/messages.html" class="button.button-primary">Send</button>
+                    <!-- Chat Messages -->
+                    <div class="chat-messages">
+                        <!-- Sender Message -->
+                        <div class="message sender">
+                            <div class="message-content">
+                                <p class="margin-bottom-xs">Hi, I'm interested in the dining table you posted. Is it still available?</p>
+                                <small>10:30 AM</small>
                             </div>
                         </div>
-                    </form>
+
+                        <!-- Receiver Message -->
+                        <div class="message receiver">
+                            <div class="message-content">
+                                <p class="margin-bottom-xs">Yes, it's still available! Would you like to arrange a pickup?</p>
+                                <small>10:35 AM</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Message Input -->
+                    <div class="chat-input">
+                        <form id="messageForm">
+                            <div class="input-group margin-bottom-0">
+                                <input class="input-group-field" type="text" placeholder="Type your message...">
+                                <div class="input-group-button">
+                                    <button type="submit" class="button">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -132,7 +134,7 @@
     <!-- Include Footer -->
     <footer>
         <div class="grid-container">
-            <div class="grid-x grid-margin-x">
+            <div class="grid-x grid-margin-x margin-top-xl">
                 <div class="cell medium-4">
                     <h4 class="footer-title">About ShareCare</h4>
                     <p>Connecting communities through meaningful donations.</p>

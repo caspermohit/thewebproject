@@ -37,6 +37,7 @@ Global Variables and Theme
     --space-lg: 1.5rem;   /* 24px */
     --space-xl: 2rem;     /* 32px */
     --space-xxl: 3rem;    /* 48px */
+    --space-xxxl: 4rem;   /* 64px */
 
     /* Border Radius */
     --radius-sm: 4px;
@@ -190,6 +191,9 @@ p {
     width: 100%;
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
+}
+.cell:hover {
+    color: var(--secondary-color);
 }
 
 /* Foundation Responsive Classes */
@@ -575,8 +579,33 @@ input:checked + .switch-slider:before {
     margin-top: var(--space-md);
 }
 
+.margin-top-lg {
+    margin-top: var(--space-lg);
+}
+
+.margin-top-xl {
+    margin-top: var(--space-xl);
+}
+
+.margin-top-xxl {
+    margin-top: var(--space-xxl);
+}
+
 .margin-bottom {
     margin-bottom: var(--space-md);
+}
+
+.margin-bottom-lg {
+    margin-bottom: var(--space-lg);
+}
+
+.margin-bottom-xl {
+    margin-bottom: var(--space-xl);
+}
+
+.margin-y-xl {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
 }
 
 .padding-top {
@@ -745,5 +774,99 @@ label {
     .hero-stats {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+/* Chat Component */
+main {
+    min-height: calc(100vh - 200px); /* Account for header and footer */
+    padding-bottom: var(--space-xxl); /* Add padding at bottom */
+}
+
+.chat-container {
+    height: calc(100vh - 400px); /* Reduced height to prevent overflow */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: var(--space-xl);
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-200);
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-md);
+    background-color: var(--gray-100);
+    margin-bottom: 0; /* Remove margin to prevent double spacing */
+}
+
+.message {
+    margin-bottom: var(--space-md);
+}
+
+.message-content {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    max-width: 70%;
+}
+
+.sender .message-content {
+    background-color: var(--primary-color);
+    color: var(--white);
+    margin-left: auto;
+}
+
+.receiver .message-content {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+}
+
+.chat-input {
+    position: relative; /* Changed from sticky to relative */
+    bottom: 0;
+    background: var(--white);
+    padding: var(--space-md);
+    border-top: 1px solid var(--gray-200);
+    margin-top: auto; /* Push to bottom of container */
+}
+
+.conversation-list {
+    height: calc(100vh - 400px); /* Match chat container height */
+    overflow-y: auto;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    background-color: var(--white);
+}
+
+.conversation-item {
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--gray-200);
+    transition: background-color 0.2s ease;
+}
+
+.conversation-item:hover {
+    background-color: var(--gray-100);
+}
+
+.conversation-item.active {
+    background-color: var(--primary-color-light);
+}
+
+.conversation-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Add responsive adjustments for chat */
+@media (max-width: 768px) {
+    .chat-container,
+    .conversation-list {
+        height: calc(100vh - 300px);
+    }
+    
+    main {
+        padding-bottom: var(--space-xl);
     }
 } 
