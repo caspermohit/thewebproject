@@ -1,0 +1,227 @@
+/* Template Layouts */
+
+/* Default Page Layout */
+.page-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.page-content {
+    flex: 1;
+    padding: var(--space-lg);
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--container-lg);
+}
+
+/* Two Column Layout */
+.two-column-layout {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    margin: 0 auto;
+    max-width: var(--container-xl);
+}
+
+.two-column-layout > .main-content {
+    flex: 1;
+    padding: var(--space-md);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.two-column-layout > .sidebar {
+    width: 300px;
+    padding: var(--space-md);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+    .two-column-layout {
+        flex-direction: column;
+    }
+    
+    .two-column-layout > .sidebar {
+        width: 100%;
+    }
+}
+
+/* Dashboard Layout */
+.dashboard-layout {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    margin: 0 auto;
+    max-width: var(--container-xl);
+}
+
+.dashboard-sidebar {
+    width: 240px;
+    padding: var(--space-md);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+}
+
+.dashboard-main {
+    flex: 1;
+    padding: var(--space-md);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+}
+
+@media (max-width: 1024px) {
+    .dashboard-layout {
+        flex-direction: column;
+    }
+    
+    .dashboard-sidebar {
+        width: 100%;
+    }
+}
+
+/* Auth Layout */
+.auth-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    background: var(--gray-100);
+    padding: var(--space-lg);
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    padding: var(--space-xl);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+}
+
+/* Grid Layout Templates */
+.grid-layout {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.grid-layout.columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-layout.columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-layout.columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .grid-layout.columns-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-layout.columns-3,
+    .grid-layout.columns-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-layout.columns-2,
+    .grid-layout.columns-3,
+    .grid-layout.columns-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Content Area Templates */
+.content-area {
+    width: 100%;
+    max-width: var(--container-lg);
+    margin: 0 auto;
+    padding: var(--space-lg);
+}
+
+.content-area-narrow {
+    max-width: var(--container-md);
+}
+
+.content-area-wide {
+    max-width: var(--container-xl);
+}
+
+/* Card Grid Layout */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    margin: 0 auto;
+}
+
+.card-grid > * {
+    flex: 1 1 300px;
+    min-width: 0;
+    margin: 0;
+}
+
+/* List Layout */
+.list-layout {
+    padding: var(--space-md);
+    margin: 0 auto;
+}
+
+.list-item {
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    background: var(--white);
+}
+
+/* Form Layout */
+.form-layout {
+    max-width: var(--container-sm);
+    margin: 0 auto;
+    padding: var(--space-lg);
+}
+
+.form-section {
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    background: var(--white);
+}
+
+/* Section Layout Box Model */
+.section-layout {
+    padding: var(--space-xl) var(--space-lg);
+    margin: var(--space-xl) 0;
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Split Section Box Model */
+.split-section {
+    display: flex;
+    gap: var(--space-xl);
+    padding: var(--space-lg);
+    margin: var(--space-xl) 0;
+    border-radius: var(--radius-md);
+} 

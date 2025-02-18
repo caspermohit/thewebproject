@@ -1,0 +1,247 @@
+/* Foundation Color Overrides */
+
+/* Buttons */
+.button {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.button:hover, 
+.button:focus {
+    background-color: var(--primary-color-dark);
+}
+
+.button.secondary {
+    background-color: var(--secondary-color);
+}
+
+.button.secondary:hover,
+.button.secondary:focus {
+    background-color: var(--secondary-color-dark);
+}
+
+.button.success {
+    background-color: var(--success-color);
+}
+
+.button.success:hover,
+.button.success:focus {
+    background-color: var(--primary-color-dark);
+}
+
+.button.alert {
+    background-color: var(--danger-color);
+}
+
+.button.warning {
+    background-color: var(--warning-color);
+    color: var(--neutral-900);
+}
+
+/* Callouts */
+.callout {
+    border: 1px solid var(--neutral-200);
+}
+
+.callout.primary {
+    background-color: rgba(67, 170, 139, 0.1);
+    border-color: var(--primary-color);
+}
+
+.callout.secondary {
+    background-color: rgba(55, 75, 67, 0.1);
+    border-color: var(--secondary-color);
+}
+
+.callout.success {
+    background-color: rgba(67, 170, 139, 0.1);
+    border-color: var(--success-color);
+}
+
+.callout.warning {
+    background-color: rgba(255, 209, 102, 0.1);
+    border-color: var(--warning-color);
+}
+
+.callout.alert {
+    background-color: rgba(239, 71, 111, 0.1);
+    border-color: var(--danger-color);
+}
+
+/* Labels */
+.label {
+    background-color: var(--primary-color);
+}
+
+.label.secondary {
+    background-color: var(--secondary-color);
+}
+
+.label.success {
+    background-color: var(--success-color);
+}
+
+.label.warning {
+    background-color: var(--warning-color);
+    color: var(--neutral-900);
+}
+
+.label.alert {
+    background-color: var(--danger-color);
+}
+
+/* Progress Bars */
+.progress {
+    background-color: var(--neutral-200);
+}
+
+.progress-meter {
+    background-color: var(--primary-color);
+}
+
+.progress.secondary .progress-meter {
+    background-color: var(--secondary-color);
+}
+
+.progress.success .progress-meter {
+    background-color: var(--success-color);
+}
+
+.progress.warning .progress-meter {
+    background-color: var(--warning-color);
+}
+
+.progress.alert .progress-meter {
+    background-color: var(--danger-color);
+}
+
+/* Switches */
+.switch-paddle {
+    background-color: var(--neutral-300);
+}
+
+.switch-input:checked ~ .switch-paddle {
+    background-color: var(--primary-color);
+}
+
+/* Tabs */
+.tabs-title > a {
+    color: var(--neutral-700);
+}
+
+.tabs-title > a:hover {
+    color: var(--primary-color);
+}
+
+.tabs-title > a[aria-selected='true'] {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Menu */
+.menu .is-active > a {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+}
+
+a {
+    line-height: inherit;
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Pagination */
+.pagination .current {
+    background-color: var(--primary-color);
+}
+
+.pagination a:hover {
+    background-color: var(--neutral-100);
+    color: var(--primary-color);
+}
+
+/* Breadcrumbs */
+.breadcrumbs a {
+    color: var(--primary-color);
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary-color-dark);
+}
+
+/* Forms */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+/* Dropdown */
+.dropdown-pane {
+    border-color: var(--neutral-200);
+    box-shadow: var(--shadow-md);
+}
+
+/* Tooltips */
+.tooltip {
+    background-color: var(--secondary-color);
+}
+
+.tooltip.top::before {
+    border-color: var(--secondary-color) transparent transparent;
+}
+
+.tooltip.bottom::before {
+    border-color: transparent transparent var(--secondary-color);
+}
+
+.tooltip.left::before {
+    border-color: transparent transparent transparent var(--secondary-color);
+}
+
+.tooltip.right::before {
+    border-color: transparent var(--secondary-color) transparent transparent;
+}
+
+/* Additional Foundation Overrides */
+.button.clear {
+    color: var(--primary-color);
+}
+
+.button.clear:hover {
+    color: var(--primary-color-dark);
+}
+
+.button.clear.secondary {
+    color: var(--secondary-color);
+}
+
+.button.clear.secondary:hover {
+    color: var(--secondary-color-dark);
+}
+
+.button.hollow {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.button.hollow:hover {
+    border-color: var(--primary-color-dark);
+    color: var(--primary-color-dark);
+}
+
+.button.hollow.secondary {
+    border-color: var(--secondary-color);
+    color: var(--neutral-100);
+}
+
+.button.hollow.secondary:hover {
+    border-color: var(--secondary-color-dark);
+    color: var(--neutral-100);
+} 

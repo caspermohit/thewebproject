@@ -1,25 +1,36 @@
-project-root/
-├── css/
-│   ├── foundation.css
-│   ├── member1-styles.css
-│   ├── member2-styles.css
-│   ├── member3-styles.css
-│   └── member4-styles.css
-├── images/
-│   ├── items/
-│   │   ├── furniture/
-│   │   │   ├── chair1.jpg
-│   │   │   ├── desk1.jpg
-│   │   │   ├── table1.jpg
-│   │   │   └── bookshelf1.jpg
-│   │   ├── electronics/
-│   │   │   └── lamp1.jpg
-│   │   └── books/
-│   │       └── books-collection1.jpg
-│   ├── hero/
-│   │   └── hero-bg.jpg
-│   └── logo/
-│       └── sharecare-logo.png
-├── js/
-│   └── foundation.js
-└── index.html
+
+
+
+
+
+src/assets/css/
+├── abstracts/
+│   └── _variables.css      # Global variables and custom properties
+├── base/
+│   ├── _reset.css         # Global resets
+│   └── _typography.css    # Base typography styles
+├── 01-atoms/
+│   ├── _buttons.css       # Button styles
+│   ├── _form.css         # Form input styles
+│   ├── _typography.css   # Atomic typography (headings, paragraphs)
+│   ├── _icons.css        # Icon styles
+│   └── _links.css        # Link styles
+├── 02-molecules/
+│   ├── _forms.css        # Form groups
+│   ├── _cards.css        # Basic card components
+│   ├── _navigation.css   # Navigation components
+│   └── _search.css       # Search components
+├── 03-organisms/
+│   ├── _header.css       # Header styles
+│   ├── _footer.css       # Footer styles
+│   ├── _sections.css     # Section layouts
+│   └── _cards.css        # Complex card layouts
+├── 04-templates/
+│   ├── _auth.css         # Authentication template styles
+│   ├── _main.css         # Main template styles
+│   └── _dashboard.css    # Dashboard template styles
+├── 05-pages/
+│   ├── _home.css         # Home page specific styles
+│   ├── _auth.css         # Auth pages specific styles
+│   └── _dashboard.css    # Dashboard specific styles
+└── main.css              # Main stylesheet that imports all components

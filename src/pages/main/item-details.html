@@ -4,14 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShareCare - Community Donation Platform</title>
+    <title>Item Details - Share&Care</title>
     
     <!-- Foundation CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css">
     
     <!-- Main CSS Files (Atomic Design Structure) -->
-
-    <link rel="stylesheet" href="./src/assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/01-atoms/_buttons.css">
+    <link rel="stylesheet" href="../../assets/css/02-molecules/_cards.css">
+    <link rel="stylesheet" href="../../assets/css/02-molecules/_navigation.css">
+    <link rel="stylesheet" href="../../assets/css/03-organisms/_header.css">
+    <link rel="stylesheet" href="../../assets/css/03-organisms/_footer.css">
+    <link rel="stylesheet" href="../../assets/css/04-templates/_layouts.css">
+    <link rel="stylesheet" href="../../assets/css/05-pages/_pages.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -45,70 +52,64 @@
         </div>
     </header>
 
+
     <div class="grid-container">
         <ul class="breadcrumbs">
-            <li>Home</li>
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="browse.html">Browse</a></li>
+            <li>Item Details</li>
         </ul>
     </div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <section class="hero-overlay">
-            <div class="hero-content">
-                <h1 class="hero-title">Share Care, Share Hope</h1>
-                <p class="hero-subtitle">Connect with your community through meaningful donations and create lasting impact</p>
-                <a href="/src/pages/main/donate.html" class="button large hero-cta">
-                    <i class="bx bx-donate-heart"></i> Start Donating
-                </a>
-                
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <span class="hero-stat-number">500+</span>
-                        Items Donated
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-number">250+</span>
-                        Happy Donors
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-number">50+</span>
-                        Communities Helped
-                    </div>
+    <main class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <!-- Item Images Section -->
+            <div class="cell medium-6">
+                <div class="primary-image">
+                    <img src="/images/furniture/couch.jpg" alt="Item Primary Image">
                 </div>
             </div>
-        </section>
 
-        <div class="grid-container">
-            <div class="grid-x grid-margin-x grid-padding-x section-padding">
-                <!-- Featured Items -->
-                <div class="cell small-12">
-                    <h2 class="section-header text-center">Featured Items</h2>
-                </div>
+            <!-- Item Details Section -->
+            <div class="cell medium-6">
+                <h1>Item Title</h1>
                 
-                <div class="cell medium-4 large-3">
-                    <div class="card">
-                        <img src="./src/assets/images/furniture/couch.jpg" alt="couch">
-                        <div class="card-section">
-                            <h4>couch</h4>
-                            <p>Ergonomic Couch in excellent condition</p>
-                            <a href="/src/pages/main/item-details.html" class="button expanded">View Details</a>
-                        </div>
-                        
+                <!-- Essential Item Info -->
+                <div class="item-meta">
+                    <p><strong>Category:</strong> Furniture</p>
+                    <p><strong>Condition:</strong> Like New</p>
+                    <div class="location-info">
+                        <p><strong>Location:</strong> Downtown Area</p>
+                       
                     </div>
-                    <div class="card">
-                        <img src="./src/assets/images/furniture/1.jpg" alt="couch">
-                        <div class="card-section">
-                            <h4>couch</h4>
-                            <p>Ergonomic Couch in excellent condition</p>
-                            <a href="/src/pages/main/item-details.html" class="button expanded">View Details</a>
-                        </div>
-                    </div>
+                    <p><strong>Posted:</strong> 2 days ago</p>
+                </div>
+
+                <div class="item-description">
+                    <h3>Description</h3>
+                    <p>Detailed description of the item goes here. Including any specific details about the condition, measurements, or special features.</p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button type="button" class="button">Request Item</button>
+                    <a href="message.html" class="button" >Message Donor</a>
+                    <a href="map.html" class="button">
+                        <i class="bx bx-map"></i> View on Map
+                    </a>
+                </div>
+
+                <!-- Basic Donor Info -->
+                <div class="donor-info">
+                    <h3>Pickup Information</h3>
+                    <p>Available for pickup: Weekdays after 5 PM</p>
+                    <p>Location: Within 5 miles of Downtown</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Include Footer -->
     <footer>
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
@@ -129,7 +130,7 @@
                     <div class="footer-social-icons">
                         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="facebook"><i class="bx bxl-instagram"></i></a>
                     </div>
                 </div>
                 <div class="cell">
@@ -140,5 +141,8 @@
             </div>
         </div>
     </footer>
+
+    <!-- Foundation JavaScript -->
+ 
 </body>
 </html> 

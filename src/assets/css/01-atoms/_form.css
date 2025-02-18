@@ -1,0 +1,44 @@
+/* Form Atoms */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--neutral-300);
+    border-radius: 4px;
+    margin-bottom: var(--space-md);
+    font-family: var(--font-family);
+    transition: border-color var(--transition-normal);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    color: var(--neutral-800);
+    font-weight: 500;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin: 0;
+}
+
+::placeholder {
+    color: var(--neutral-300);
+} 
