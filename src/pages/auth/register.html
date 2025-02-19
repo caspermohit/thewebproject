@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css">
     
     <!-- Main CSS Files (Atomic Design Structure) -->
-  
     <link rel="stylesheet" href="../../../src/assets/css/styles.css">
     
     <!-- Google Fonts -->
@@ -20,36 +19,38 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
-   <!-- Header Section -->
-   <header class="site-header">
-    <div class="grid-container">
-        <nav class="site-navigation">
-            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-                <i class="bx bx-menu"></i>
-            </button>
-            
-            <div class="nav-brand">Share&Care</div>
-            
-            <ul class="nav-menu nav-menu-left">
-                <li><a href="../../../index.html"><i class="bx bx-home nav-icon"></i> Home</a></li>
-                <li><a href="/src/pages/main/donate.html"><i class="bx bx-donate-heart nav-icon"></i> Donate</a></li>
-                <li><a href="/src/pages/main/browse.html"><i class="bx bx-search nav-icon"></i> Browse</a></li>
-            </ul>
-            
-            <ul class="nav-menu nav-menu-right">
-                <li><a href="/src/pages/auth/login.html" class="button small"><i class="bx bx-user nav-icon"></i> Login</a></li>
-                <li><a href="/src/pages/main/history.html"><i class="bx bx-history nav-icon"></i></a></li>
-                <li><a href="/src/pages/main/notifications.html"><i class="bx bx-bell nav-icon"></i></a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="grid-container">
+            <nav class="site-navigation" role="navigation" aria-label="Main navigation">
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <i class="bx bx-menu"></i>
+                </button>
+                
+                <div class="nav-brand">Share&Care</div>
+                
+                <ul class="nav-menu nav-menu-left">
+                    <li><a href="../../../index.html"><i class="bx bx-home nav-icon"></i> Home</a></li>
+                    <li><a href="../main/donate.html"><i class="bx bx-donate-heart nav-icon"></i> Donate</a></li>
+                    <li><a href="../main/browse.html"><i class="bx bx-search nav-icon"></i> Browse</a></li>
+                </ul>
+                
+                <ul class="nav-menu nav-menu-right">
+                    <li><a href="login.html" class="button small"><i class="bx bx-user nav-icon"></i> Login</a></li>
+                    <li><a href="../main/history.html"><i class="bx bx-history nav-icon"></i> History</a></li>
+                    <li><a href="../main/notifications.html"><i class="bx bx-bell nav-icon"></i> Notifications</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <div class="grid-container">
-        <ul class="breadcrumbs">
-            <li><a href="../../../index.html">Home</a></li>
-            <li>Register</li>
-        </ul>
+        <nav aria-label="Breadcrumb navigation">
+            <ul class="breadcrumbs">
+                <li><a href="../../../index.html">Home</a></li>
+                <li>Register</li>
+            </ul>
+        </nav>
     </div>
 
     <main class="grid-container">
@@ -57,58 +58,60 @@
             <div class="cell small-12 medium-8 large-6">
                 <div class="card auth-card">
                     <div class="card-section">
-                        <h2 class="text-center">Create Account</h2>
+                        <h1 class="text-center">Create Account</h1>
                         
-                        <form id="registerForm" class="margin-top-lg">
-                            <div class="form-section margin-bottom-lg">
-                                <h4 class="section-title">Personal Information</h4>
+                        <form id="registerForm" class="margin-top-lg" aria-label="Registration form">
+                            <fieldset>
+                                <legend>Personal Information</legend>
                                 <div class="form-group">
                                     <label for="firstName">First Name
-                                        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required aria-required="true">
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="lastName">Last Name
-                                        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required aria-required="true">
                                     </label>
                                 </div>
-                            </div>
+                            </fieldset>
 
-                            <div class="form-section margin-bottom-lg">
-                                <h4 class="section-title">Account Details</h4>
+                            <fieldset>
+                                <legend>Account Details</legend>
                                 <div class="form-group">
                                     <label for="email">Email Address
-                                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                                        <input type="email" id="email" name="email" placeholder="Enter your email address" required aria-required="true">
                                     </label>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="password">Password
-                                        <input type="password" id="password" name="password" placeholder="Create a password" required>
+                                        <input type="password" id="password" name="password" placeholder="Create a password" required aria-required="true" 
+                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                                     </label>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="confirmPassword">Confirm Password
-                                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required aria-required="true">
                                     </label>
                                 </div>
-                            </div>
+                            </fieldset>
 
-                            <div class="form-section margin-bottom-lg">
-                                <h4 class="section-title">Terms & Conditions</h4>
+                            <fieldset>
+                                <legend>Terms & Conditions</legend>
                                 <div class="form-group">
                                     <label class="checkbox-label">
-                                        <input type="checkbox" name="terms" required>
-                                        <span>I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a></span>
+                                        <input type="checkbox" name="terms" id="terms" required aria-required="true">
+                                        <span>I agree to the <a href="../../../terms.html">Terms of Service</a> and <a href="../../../privacy.html">Privacy Policy</a></span>
                                     </label>
                                 </div>
-                            </div>
+                            </fieldset>
 
                             <div class="form-actions margin-top-xl">
-                                <button type="submit" class="button expanded">Create Account</button>
+                                <button type="submit" class="button expanded" aria-label="Create your account">Create Account</button>
                                 <div class="text-center margin-top-md">
-                                    <p>Already have an account? <a href="login.html" class="text-primary">Login</a></p>
+                                    <p>Already have an account? <a href="login.html">Login</a></p>
                                 </div>
                             </div>
                         </form>
@@ -118,7 +121,7 @@
         </div>
     </main>
 
-    <!-- Include Footer -->
+    <!-- Footer -->
     <footer>
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
@@ -129,17 +132,23 @@
                 <div class="cell medium-4">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="facebook">About Us</a></li>
-                        <li><a href="#" class="facebook">How It Works</a></li>
-                        <li><a href="#" class="facebook">Contact</a></li>
+                        <li><a href="../../../about.html">About Us</a></li>
+                        <li><a href="../../../how-it-works.html">How It Works</a></li>
+                        <li><a href="../../../contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="cell medium-4">
                     <h4 class="footer-title">Connect With Us</h4>
                     <div class="footer-social-icons">
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="social-icon facebook" aria-label="Visit our Facebook page">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon twitter" aria-label="Follow us on Twitter">
+                            <i class="bx bxl-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon instagram" aria-label="Follow us on Instagram">
+                            <i class="bx bxl-instagram"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="cell">
@@ -152,6 +161,6 @@
     </footer>
 
     <!-- Foundation JavaScript -->
-   
+    
 </body>
 </html> 

@@ -12,10 +12,6 @@
     <!-- Main CSS File (Atomic Design Structure) -->
     <link rel="stylesheet" href="../../../src/assets/css/styles.css">
     
-    
-    
-    
-   
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
    
@@ -26,7 +22,7 @@
     <!-- Header Section -->
     <header class="site-header">
         <div class="grid-container">
-            <nav class="site-navigation">
+            <nav class="site-navigation" role="navigation" aria-label="Main navigation">
                 <button class="mobile-menu-toggle" aria-label="Toggle Menu">
                     <i class="bx bx-menu"></i>
                 </button>
@@ -35,93 +31,106 @@
                 
                 <ul class="nav-menu nav-menu-left">
                     <li><a href="../../../index.html"><i class="bx bx-home nav-icon"></i> Home</a></li>
-                    <li><a href="/src/pages/main/donate.html"><i class="bx bx-donate-heart nav-icon"></i> Donate</a></li>
-                    <li><a href="/src/pages/main/browse.html"><i class="bx bx-search nav-icon"></i> Browse</a></li>
+                    <li><a href="../main/donate.html"><i class="bx bx-donate-heart nav-icon"></i> Donate</a></li>
+                    <li><a href="../main/browse.html"><i class="bx bx-search nav-icon"></i> Browse</a></li>
                 </ul>
                 
                 <ul class="nav-menu nav-menu-right">
-                    <li><a href="/src/pages/auth/login.html" class="button small"><i class="bx bx-user nav-icon"></i> Login</a></li>
-                    <li><a href="/src/pages/main/history.html"><i class="bx bx-history nav-icon"></i></a></li>
-                    <li><a href="/src/pages/main/notifications.html"><i class="bx bx-bell nav-icon"></i></a></li>
+                    <li><a href="../auth/login.html" class="button small"><i class="bx bx-user nav-icon"></i> Login</a></li>
+                    <li><a href="../main/history.html"><i class="bx bx-history nav-icon"></i> History</a></li>
+                    <li><a href="../main/notifications.html"><i class="bx bx-bell nav-icon"></i> Notifications</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <div class="grid-container">
+        <nav aria-label="Breadcrumb navigation">
+            <ul class="breadcrumbs">
+                <li><a href="../../../index.html">Home</a></li>
+                <li>Messages</li>
+            </ul>
+        </nav>
+    </div>
 
     <main class="grid-container">
         <div class="grid-x grid-padding-x">
             <!-- Conversations List -->
             <div class="cell medium-4">
                 <div class="input-group margin-bottom-md">
-                    <input class="input-group-field" type="search" placeholder="Search messages...">
+                    <label for="messageSearch" class="visually-hidden">Search messages</label>
+                    <input type="search" id="messageSearch" class="input-group-field" placeholder="Search messages..." aria-label="Search messages">
                 </div>
 
-                <div class="conversation-list">
-                    <!-- Active Conversation -->
-                    <div class="conversation-item active">
-                        <a href="#conversation1">
-                            <div class="grid-x grid-padding-x">
-                                <div class="cell auto">
-                                    <h5 class="message-sender">John Doe</h5>
-                                    <p>Dining Table</p>
-                                    <small>2 mins ago</small>
+                <nav aria-label="Conversations list">
+                    <div class="conversation-list" role="list">
+                        <!-- Active Conversation -->
+                        <div class="conversation-item active" role="listitem">
+                            <a href="#conversation1" aria-current="page" aria-label="Conversation with John Doe about Dining Table">
+                                <div class="grid-x grid-padding-x">
+                                    <div class="cell auto">
+                                        <h2 class="message-sender h5">John Doe</h2>
+                                        <p>Dining Table</p>
+                                        <time datetime="2024-02-20T14:30:00">2 mins ago</time>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
 
-                    <!-- Other Conversation -->
-                    <div class="conversation-item">
-                        <a href="#conversation2">
-                            <div class="grid-x grid-padding-x">
-                                <div class="cell auto">
-                                    <h5>Jane Smith</h5>
-                                    <p>Books Collection</p>
-                                    <small>Yesterday</small>
+                        <!-- Other Conversation -->
+                        <div class="conversation-item" role="listitem">
+                            <a href="#conversation2" aria-label="Conversation with Jane Smith about Books Collection">
+                                <div class="grid-x grid-padding-x">
+                                    <div class="cell auto">
+                                        <h2 class="h5">Jane Smith</h2>
+                                        <p>Books Collection</p>
+                                        <time datetime="2024-02-19">Yesterday</time>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                </nav>
             </div>
 
             <!-- Chat Area -->
             <div class="cell medium-8">
-                <div class="chat-container">
+                <div class="chat-container" role="complementary" aria-label="Chat messages">
                     <!-- Chat Header -->
                     <div class="card margin-bottom-md">
                         <div class="card-section">
-                            <h4 class="card-title margin-bottom-0">Dining Table</h4>
+                            <h1 class="card-title h4 margin-bottom-0">Dining Table</h1>
                             <p class="margin-bottom-0">Conversation with John Doe</p>
                         </div>
                     </div>
 
                     <!-- Chat Messages -->
-                    <div class="chat-messages">
+                    <div class="chat-messages" role="log" aria-label="Message history">
                         <!-- Sender Message -->
-                        <div class="message sender">
+                        <div class="message sender" role="article">
                             <div class="message-content">
                                 <p class="margin-bottom-xs">Hi, I'm interested in the dining table you posted. Is it still available?</p>
-                                <small>10:30 AM</small>
+                                <time datetime="2024-02-20T10:30:00">10:30 AM</time>
                             </div>
                         </div>
 
                         <!-- Receiver Message -->
-                        <div class="message receiver">
+                        <div class="message receiver" role="article">
                             <div class="message-content">
                                 <p class="margin-bottom-xs">Yes, it's still available! Would you like to arrange a pickup?</p>
-                                <small>10:35 AM</small>
+                                <time datetime="2024-02-20T10:35:00">10:35 AM</time>
                             </div>
                         </div>
                     </div>
 
                     <!-- Message Input -->
                     <div class="chat-input">
-                        <form id="messageForm">
+                        <form id="messageForm" aria-label="Send message form">
                             <div class="input-group margin-bottom-0">
-                                <input class="input-group-field" type="text" placeholder="Type your message...">
+                                <label for="messageInput" class="visually-hidden">Type your message</label>
+                                <input type="text" id="messageInput" class="input-group-field" placeholder="Type your message..." aria-label="Message input">
                                 <div class="input-group-button">
-                                    <button type="submit" class="button">Send</button>
+                                    <button type="submit" class="button" aria-label="Send message">Send</button>
                                 </div>
                             </div>
                         </form>
@@ -131,7 +140,7 @@
         </div>
     </main>
 
-    <!-- Include Footer -->
+    <!-- Footer -->
     <footer>
         <div class="grid-container">
             <div class="grid-x grid-margin-x margin-top-xl">
@@ -142,17 +151,23 @@
                 <div class="cell medium-4">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="facebook">About Us</a></li>
-                        <li><a href="#" class="facebook">How It Works</a></li>
-                        <li><a href="#" class="facebook">Contact</a></li>
+                        <li><a href="../../../about.html">About Us</a></li>
+                        <li><a href="../../../how-it-works.html">How It Works</a></li>
+                        <li><a href="../../../contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="cell medium-4">
                     <h4 class="footer-title">Connect With Us</h4>
                     <div class="footer-social-icons">
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="social-icon facebook" aria-label="Visit our Facebook page">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon twitter" aria-label="Follow us on Twitter">
+                            <i class="bx bxl-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon instagram" aria-label="Follow us on Instagram">
+                            <i class="bx bxl-instagram"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="cell">
@@ -163,7 +178,14 @@
             </div>
         </div>
     </footer>
+
     <!-- Foundation JavaScript -->
-   
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).foundation();
+        });
+    </script>
 </body>
 </html>
