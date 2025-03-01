@@ -1,0 +1,237 @@
+/* Login Page Styles */
+
+.login-page main {
+    padding: 4rem 0;
+    margin-bottom: 4rem;
+    min-height: calc(100vh - 300px); /* This ensures minimum height accounting for header and footer */
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.login-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    padding: 2rem;
+    width: 100%;
+}
+
+.login-card h2 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.login-card p {
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.login-form label {
+    color: #34495e;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #95a5a6;
+}
+
+.input-wrapper input {
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    color: var(--primary-color);
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin: 0 8px 0 0;
+   
+}
+
+
+.checkbox-label span {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--primary-color) !important;
+    text-decoration: underline;
+}
+
+.button.primary {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.button.primary:hover {
+    background: var(--primary-color);
+}
+
+.divider {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 30px);
+    height: 1px;
+    background: #dfe6e9;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.divider span {
+    background: white;
+    padding: 0 15px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+
+.register-link p {
+    margin: 0;
+    color: #7f8c8d;
+}
+
+.register-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Password Strength Indicator Customization */
+.password-strength-indicator {
+    margin-top: 0.5rem;
+}
+
+.strength-bar {
+    background: #f1f2f6;
+}
+
+/* Error Message Customization */
+.error-message {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #e74c3c;
+}
+
+/* Loading State */
+.button.primary.loading {
+    position: relative;
+    color: transparent;
+}
+
+.button.primary.loading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 640px) {
+    .login-card {
+        padding: 1.5rem;
+    }
+
+    .input-wrapper input {
+        font-size: 16px; /* Prevent zoom on mobile */
+    }
+
+    .social-login {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-card {
+    animation: fadeIn 0.6s ease-out;
+} 

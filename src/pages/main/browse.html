@@ -1,4 +1,4 @@
-<!-- Author: [Your Name] -->
+<!-- Author: [Mohit shah] -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,40 +9,110 @@
     <!-- Foundation CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css">
     
-    <!-- Main CSS Files (Atomic Design Structure) -->
+    <!-- Main CSS Files -->
     <link rel="stylesheet" href="../../../src/assets/css/styles.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
+    <!-- Box Icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <style>
+        /* Filter Sidebar Styles */
+        .filters-sidebar {
+            position: sticky;
+            top: 20px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .filters-sidebar .card {
+            margin-bottom: 0;
+            height: 100%;
+        }
+
+        .filters-sidebar .card-section {
+            padding: 1.5rem;
+        }
+
+        .filters-sidebar form label {
+            margin-bottom: 1rem;
+        }
+
+        .filters-sidebar form button {
+            margin-top: 1rem;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .filters-sidebar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .filters-sidebar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 640px) {
+            .filters-sidebar {
+                position: relative;
+                top: 0;
+                max-height: none;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="site-header">
-        <div class="grid-container">
-            <nav class="site-navigation">
-                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-                    <i class="bx bx-menu"></i>
-                </button>
-                
-                <div class="nav-brand">Share&Care</div>
-                
-                <ul class="nav-menu nav-menu-left">
-                    <li><a href="../../../index.html"><i class="bx bx-home nav-icon"></i> Home</a></li>
-                    <li><a href="../main/donate.html"><i class="bx bx-donate-heart nav-icon"></i> Donate</a></li>
-                    <li><a href="../main/browse.html" aria-current="page"><i class="bx bx-search nav-icon"></i> Browse</a></li>
-                </ul>
-                
-                <ul class="nav-menu nav-menu-right">
-                    <li><a href="../auth/login.html" class="button small"><i class="bx bx-user nav-icon"></i> Login</a></li>
-                    <li><a href="../main/history.html"><i class="bx bx-history nav-icon"></i> History</a></li>
-                    <li><a href="../main/notifications.html"><i class="bx bx-bell nav-icon"></i> Notifications</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+   <!-- Header Section -->
+   <header class="site-header">
+    <div class="grid-container">
+        <nav class="site-navigation" role="navigation" aria-label="Main navigation">
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <i class="bx bx-menu"></i>
+            </button>
+            
+            <div class="nav-brand">Share&Care</div>
+            
+            <ul class="nav-menu">
+                <li><a href="../../../index.html"><i class="bx bx-home nav-icon"></i> Home</a></li>
+                <li><a href="donate.html"><i class="bx bx-donate-heart nav-icon"></i> Donate</a></li>
+                <li><a href="browse.html" class="active"><i class="bx bx-search nav-icon"></i> Browse</a></li>
+                <li><a href="history.html"><i class="bx bx-history nav-icon"></i> History</a></li>
+                <li><a href="notifications.html"><i class="bx bx-bell nav-icon"></i> Notifications</a></li>
+                <li class="auth-menu">
+                    <a href="#" class="auth-toggle">
+                        <i class="bx bx-user nav-icon"></i>
+                        <span>Account</span>
+                        <i class="bx bx-chevron-down"></i>
+                    </a>
+                    <div class="auth-dropdown">
+                        <div class="dropdown-header">
+                            <i class="bx bx-user-circle"></i>
+                            <span>Welcome!</span>
+                        </div>
+                        <!-- Logged out state -->
+                        <ul class="logged-out-menu">
+                            <li><a href="../auth/login.html"><i class="bx bx-log-in"></i> Login</a></li>
+                            <li><a href="../auth/register.html"><i class="bx bx-user-plus"></i> Register</a></li>
+                            <li><a href="../auth/forgot-password.html"><i class="bx bx-key"></i> Forgot Password</a></li>
+                        </ul>
+                        <!-- Logged in state -->
+                        <ul class="logged-in-menu" style="display: none;">
+                            <li><a href="../main/profile.html"><i class="bx bx-user"></i> My Profile</a></li>
+                            <li><a href="../main/settings.html"><i class="bx bx-cog"></i> Settings</a></li>
+                            <li class="admin-only" style="display: none;"><a href="/src/pages/dashboard/index.html"><i class="bx bx-grid-alt"></i> Dashboard</a></li>
+                            <li><a href="#" class="logout-link"><i class="bx bx-log-out"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <div class="grid-container">
         <ul class="breadcrumbs">
@@ -51,72 +121,52 @@
         </ul>
     </div>
 
-    <main class="grid-container main-content">
+    <main class="grid-container">
         <div class="grid-x grid-padding-x">
-            <!-- Basic Filters -->
-            <div class="cell medium-3 sidebar-padding">
-                <form id="filterForm" aria-label="Filter Items Form">
-                    <label for="category">Category
-                        <select name="category" id="category">
-                            <option value="">All Categories</option>
-                            <option value="furniture">Furniture</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="clothing">Clothing</option>
-                            <option value="books">Books</option>
-                        </select>
-                    </label>
+            <!-- Filters Sidebar -->
+            <div class="cell medium-3">
+                <div class="filters-sidebar">
+                    <div class="card">
+                        <div class="card-section">
+                            <h3>Filters</h3>
+                            <form id="filterForm">
+                                <label for="category">Category
+                                    <select id="category" name="category">
+                                        <option value="">All Categories</option>
+                                    </select>
+                                </label>
 
-                    <label for="location">Location
-                        <input type="text" id="location" name="location" placeholder="Enter location">
-                    </label>
+                                <label for="location">Location
+                                    <input type="text" id="location" name="location" placeholder="Enter location">
+                                </label>
 
-                    <button type="submit" class="button expanded" aria-label="Apply Filters">Apply Filters</button>
-                </form>
+                                <button type="submit" class="button expanded" aria-label="Apply Filters">Apply Filters</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Items Grid -->
             <div class="cell medium-9">
                 <!-- Search Bar -->
-                <div class="grid-x grid-padding-x">
+                <div class="grid-x grid-padding-x margin-bottom-1">
                     <div class="cell">
-                        <div class="input-group map-search">
-                            <input type="search" class="input-group-field" placeholder="Search items..." aria-label="Search items">
+                        <div class="input-group">
+                            <input type="search" class="input-group-field" placeholder="Search items...">
                             <div class="input-group-button">
-                                <a href="../main/search-results.html" class="button" aria-label="Search">Search</a>
+                                <button type="submit" class="button" aria-label="Search">
+                                    <i class="bx bx-search"></i> Search
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Items Grid -->
+                <!-- Items Grid Container -->
                 <div class="grid-x grid-padding-x">
-                    <!-- Sample Item Card -->
-                    <div class="cell medium-4">
-                        <div class="card" role="article">
-                            <img src="../../../src/assets/images/furniture/couch.jpg" alt="Modern brown leather couch in excellent condition">
-                            <div class="card-section">
-                                <h4 class="card-title">Couch</h4>
-                                <p>Condition: Like New</p>
-                                <p>Location: Downtown</p>
-                                <a href="map.html" aria-label="View couch location on map">
-                                    <i class="bx bx-map"></i> View on Map
-                                </a>
-                                <a href="../main/item-details.html" class="button expanded" aria-label="View couch details">View Details</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Items will be dynamically inserted here -->
                 </div>
-
-                <!-- Basic Pagination -->
-                <nav aria-label="Pagination">
-                    <ul class="pagination text-center" role="navigation" aria-label="Pagination">
-                        <li class="disabled">Previous <span class="show-for-sr">page</span></li>
-                        <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-                        <li><a href="#" aria-label="Page 2">2</a></li>
-                        <li><a href="#" aria-label="Page 3">3</a></li>
-                        <li><a href="#" aria-label="Next page">Next</a></li>
-                    </ul>
-                </nav>
             </div>
         </div>
     </main>
@@ -124,20 +174,22 @@
     <!-- Footer -->
     <footer>
         <div class="grid-container">
-            <div class="grid-x grid-margin-x">
-                <div class="cell medium-4">
+            <div class="grid-x">
+                <div class="footer-section">
                     <h4 class="footer-title">About ShareCare</h4>
                     <p>Connecting communities through meaningful donations.</p>
                 </div>
-                <div class="cell medium-4">
+                
+                <div class="footer-section">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="../../../about.html">About Us</a></li>
-                        <li><a href="../../../how-it-works.html">How It Works</a></li>
-                        <li><a href="../../../contact.html">Contact</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./how-it-works.html">How It Works</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="cell medium-4">
+                
+                <div class="footer-section">
                     <h4 class="footer-title">Connect With Us</h4>
                     <div class="footer-social-icons">
                         <a href="#" class="social-icon facebook" aria-label="Visit our Facebook page">
@@ -151,16 +203,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="cell">
-                    <div class="footer-copyright text-center">
-                        <p>&copy; 2024 ShareCare. All rights reserved.</p>
-                    </div>
+
+                <div class="footer-copyright">
+                    <p>&copy; 2024 ShareCare. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Foundation JavaScript -->
     
+    <!-- Foundation JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+    
+    <!-- Custom JavaScript -->
+    <script type="module" src="../../../src/assets/js/auth.js"></script>
+    <script type="module" src="../../../src/assets/js/pages/browse.js"></script>
 </body>
 </html>

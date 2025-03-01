@@ -1,0 +1,178 @@
+{
+  "users": [
+    {
+      "id": "usr_001",
+      "username": "mohit.shah",
+      "email": "mohit@gmail.com",
+      "password_hash": "Mohit@123",
+      "first_name": "Mohit",
+      "last_name": "Shah",
+      "profile": {
+        "avatar": "/src/assets/images/avatars/default.png",
+        "location": "San Francisco, CA",
+        "bio": "Passionate about helping the community",
+        "joined_date": "2024-01-15"
+      },
+      "donation_stats": {
+        "items_donated": 15,
+        "items_received": 5,
+        "rating": 4.8
+      },
+      "preferences": {
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": false
+        },
+        "privacy": {
+          "show_email": false,
+          "show_location": true,
+          "show_donation_history": true
+        }
+      },
+      "role": "user",
+      "status": "active",
+      "last_login": "2024-02-24T18:25:43.511Z"
+    },
+    {
+      "id": "usr_002",
+      "username": "sarah.smith",
+      "email": "sarah.smith@example.com",
+      "password_hash": "sarah@123",
+      "first_name": "Sarah",
+      "last_name": "Smith",
+      "profile": {
+        "avatar": "/src/assets/images/avatars/default-female.png",
+        "location": "New York, NY",
+        "bio": "Making the world better one donation at a time",
+        "joined_date": "2024-01-20"
+      },
+      "donation_stats": {
+        "items_donated": 8,
+        "items_received": 3,
+        "rating": 4.9
+      },
+      "preferences": {
+        "notifications": {
+          "email": true,
+          "push": false,
+          "sms": true
+        },
+        "privacy": {
+          "show_email": false,
+          "show_location": true,
+          "show_donation_history": true
+        }
+      },
+      "role": "user",
+      "status": "active",
+      "last_login": "2024-02-23T14:30:22.111Z"
+    },
+    {
+      "id": "usr_003",
+      "username": "admin.user",
+      "email": "admin@sharecare.com",
+      "password_hash": "Admin@123",
+      "first_name": "Admin",
+      "last_name": "User",
+      "profile": {
+        "avatar": "/src/assets/images/avatars/admin.png",
+        "location": "Remote",
+        "bio": "Platform Administrator",
+        "joined_date": "2024-01-01"
+      },
+      "donation_stats": {
+        "items_donated": 0,
+        "items_received": 0,
+        "rating": 0
+      },
+      "preferences": {
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": true
+        },
+        "privacy": {
+          "show_email": false,
+          "show_location": false,
+          "show_donation_history": false
+        }
+      },
+      "role": "admin",
+      "status": "active",
+      "last_login": "2024-02-24T20:15:33.999Z"
+    },
+    {
+      "id": "usr_1740435371974",
+      "username": "manisha",
+      "email": "manisha@gmail.com",
+      "password_hash": "Mohit@123",
+      "first_name": "manisha",
+      "last_name": "gupta",
+      "profile": {
+        "avatar": "/src/assets/images/avatars/default.png",
+        "location": "",
+        "bio": "",
+        "joined_date": "2025-02-24T22:16:11.974Z"
+      },
+      "donation_stats": {
+        "items_donated": 0,
+        "items_received": 0,
+        "rating": 0
+      },
+      "preferences": {
+        "notifications": {
+          "email": true,
+          "push": true,
+          "sms": false
+        },
+        "privacy": {
+          "show_email": false,
+          "show_location": true,
+          "show_donation_history": true
+        }
+      },
+      "role": "user",
+      "status": "active",
+      "last_login": "2025-02-24T22:16:11.974Z"
+    }
+  ],
+  "roles": {
+    "user": {
+      "permissions": [
+        "view_items",
+        "create_items",
+        "edit_own_items",
+        "delete_own_items",
+        "message_users",
+        "update_profile"
+      ]
+    },
+    "admin": {
+      "permissions": [
+        "view_items",
+        "create_items",
+        "edit_all_items",
+        "delete_all_items",
+        "message_users",
+        "update_profile",
+        "manage_users",
+        "view_analytics",
+        "manage_settings"
+      ]
+    }
+  },
+  "auth_settings": {
+    "token_expiry": "24h",
+    "refresh_token_expiry": "7d",
+    "max_login_attempts": 5,
+    "lockout_duration": "15m",
+    "password_requirements": {
+      "min_length": 8,
+      "require_uppercase": true,
+      "require_lowercase": true,
+      "require_number": true,
+      "require_special": true
+    }
+  }
+}

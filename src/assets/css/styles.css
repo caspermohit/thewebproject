@@ -1,3 +1,4 @@
+/* Author: [Mohit shah] */
 /* Abstracts */
 @import 'abstracts/_variables.css';
 
@@ -22,9 +23,15 @@
 
 /* Pages */
 @import '05-pages/_pages.css';
+@import '05-pages/_auth.css';
+@import '05-pages/_login.css';
+@import '05-pages/_components.css';
+@import '05-pages/messages.css';
+@import '05-pages/dashboard.css';
 
 /* Foundation Overrides - after all components to ensure our styles take precedence */
 @import 'base/_foundation-overrides.css';
 
 /* Main Utilities - these should come last to override component styles when needed */
 @import 'main.css'; 
+

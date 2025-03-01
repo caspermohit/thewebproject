@@ -1,4 +1,5 @@
-/* Header Organism */
+/* Author: [zia shaikh] */
+/* Header Base */
 .site-header {
     background: var(--white);
     box-shadow: var(--shadow-sm);
@@ -6,66 +7,88 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
-.header-container {
+/* Navigation */
+.site-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 var(--space-md);
 }
 
-.header-brand {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.header-brand img {
-    height: 40px;
-    width: auto;
-}
-
-.header-brand h1 {
-    color: var(--secondary);
-    font-size: var(--font-size-xl);
+.nav-brand {
     font-weight: 700;
-    margin: 0;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: var(--font-size-xl);
 }
 
-.header-nav {
+.nav-menu {
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     align-items: center;
-    gap: var(--space-lg);
 }
 
-.header-actions {
+.nav-menu-left,
+.nav-menu-right {
     display: flex;
     align-items: center;
     gap: var(--space-md);
 }
 
+.nav-menu a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color var(--transition-normal) var(--transition-timing);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav-icon {
+    font-size: var(--font-size-lg);
+}
+
+/* Mobile Menu */
 .mobile-menu-button {
     display: none;
     background: none;
     border: none;
-    color: var(--secondary);
+    color: var(--secondary-color);
     padding: var(--space-sm);
     cursor: pointer;
+    transition: color var(--transition-normal) var(--transition-timing);
 }
 
 .mobile-menu-button:hover {
-    color: var(--primary);
+    color: var(--primary-color);
 }
 
-/* Mobile Header */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .header-nav {
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .nav-menu-left,
+    .nav-menu-right {
         display: none;
-        position: fixed;
-        top: 72px;
+    }
+
+    .nav-menu-left.is-active,
+    .nav-menu-right.is-active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
         background: var(--white);
@@ -73,15 +96,8 @@
         box-shadow: var(--shadow-md);
     }
 
-    .header-nav.is-active {
-        display: block;
-    }
-
-    .mobile-menu-button {
-        display: block;
-    }
-
-    .header-actions {
-        gap: var(--space-sm);
+    .nav-menu a {
+        width: 100%;
+        justify-content: center;
     }
 } 

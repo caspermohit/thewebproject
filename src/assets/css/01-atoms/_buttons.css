@@ -1,4 +1,5 @@
-/* Button Atoms */
+/* Author: [goutham yadav] */
+/* Base Button */
 .button {
     background: var(--primary-color);
     color: var(--white);
@@ -6,45 +7,32 @@
     border: none;
     border-radius: var(--radius-sm);
     cursor: pointer;
-    transition: all var(--transition-normal);
+    transition: background-color var(--transition-normal) var(--transition-timing);
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
     font-weight: 500;
     text-decoration: none;
-    box-shadow: var(--shadow-sm);
 }
 
 .button:hover {
-    background: var(--primary-color-dark);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-1px);
-}
-
-/* Remove secondary color variant */
-.button.secondary {
-    background: var(--primary-color);
-}
-
-.button.secondary:hover {
     background: var(--primary-color-dark);
 }
 
 /* Button Sizes */
 .button.small {
     padding: var(--space-xs) var(--space-md);
-    font-size: var(--font-size-sm);
-}
-
-.button.large {
-    padding: var(--space-md) var(--space-xl);
-    font-size: var(--font-size-lg);
 }
 
 .button.expanded {
     width: 100%;
     justify-content: center;
-    margin: var(--space-sm) 0;
+}
+
+/* Button States */
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 /* Button Variants */
@@ -59,6 +47,23 @@
     color: var(--white);
 }
 
+/* Button with Icon */
+.button i {
+    font-size: var(--font-size-lg);
+}
+
+/* Button Sizes */
+.button.large { padding: var(--space-md) var(--space-xl); }
+
+/* Remove secondary color variant */
+.button.secondary {
+    background: var(--primary-color);
+}
+
+.button.secondary:hover {
+    background: var(--primary-color-dark);
+}
+
 /* Remove secondary outline variant */
 .button.outline.secondary {
     border-color: var(--primary-color);
@@ -70,12 +75,6 @@
     color: var(--white);
 }
 
-/* Button States */
-.button:disabled,
-.button.disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
 
 /* Update state buttons to use primary color variants */
 .button.success {

@@ -11,7 +11,8 @@
     
     <!-- Main CSS Files (Atomic Design Structure) -->
     <link rel="stylesheet" href="../../../src/assets/css/styles.css">
-    
+   
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
@@ -36,9 +37,34 @@
                 </ul>
                 
                 <ul class="nav-menu nav-menu-right">
-                    <li><a href="login.html" class="button small"><i class="bx bx-user nav-icon"></i> Login</a></li>
                     <li><a href="../main/history.html"><i class="bx bx-history nav-icon"></i> History</a></li>
                     <li><a href="../main/notifications.html"><i class="bx bx-bell nav-icon"></i> Notifications</a></li>
+                    <li class="auth-menu">
+                        <a href="#" class="auth-toggle">
+                            <i class="bx bx-user nav-icon"></i>
+                            <span>Account</span>
+                            <i class="bx bx-chevron-down"></i>
+                        </a>
+                        <div class="auth-dropdown">
+                            <div class="dropdown-header">
+                                <i class="bx bx-user-circle"></i>
+                                <span>Welcome!</span>
+                            </div>
+                            <!-- Logged out state -->
+                            <ul class="logged-out-menu">
+                                <li><a href="login.html"><i class="bx bx-log-in"></i> Login</a></li>
+                                <li><a href="register.html" class="active"><i class="bx bx-user-plus"></i> Register</a></li>
+                                <li><a href="forgot-password.html"><i class="bx bx-key"></i> Forgot Password</a></li>
+                            </ul>
+                            <!-- Logged in state -->
+                            <ul class="logged-in-menu" style="display: none;">
+                                <li><a href="../main/profile.html"><i class="bx bx-user"></i> My Profile</a></li>
+                                <li><a href="../main/settings.html"><i class="bx bx-cog"></i> Settings</a></li>
+                                <li class="admin-only" style="display: none;"><a href="/src/pages/dashboard/index.html"><i class="bx bx-grid-alt"></i> Dashboard</a></li>
+                                <li><a href="#" class="logout-link"><i class="bx bx-log-out"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -59,6 +85,7 @@
                 <div class="card auth-card">
                     <div class="card-section">
                         <h1 class="text-center">Create Account</h1>
+                        <p class="text-center">Join our community and start sharing</p>
                         
                         <form id="registerForm" class="margin-top-lg" aria-label="Registration form">
                             <fieldset>
@@ -75,41 +102,57 @@
                                 </div>
                             </fieldset>
 
-                            <fieldset>
-                                <legend>Account Details</legend>
-                                <div class="form-group">
-                                    <label for="email">Email Address
-                                        <input type="email" id="email" name="email" placeholder="Enter your email address" required aria-required="true">
-                                    </label>
-                                </div>
+                            <div class="form-group">
+                                <label for="email">Email Address
+                                    <div class="input-wrapper">
+                                        <i class="bx bx-envelope"></i>
+                                        <input type="email" id="email" name="email" 
+                                               placeholder="Enter your email" 
+                                               required aria-required="true">
+                                    </div>
+                                </label>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="password">Password
-                                        <input type="password" id="password" name="password" placeholder="Create a password" required aria-required="true" 
-                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-                                    </label>
-                                </div>
+                            <div class="form-group">
+                                <label for="password">Password
+                                    <div class="input-wrapper">
+                                        <i class="bx bx-lock-alt"></i>
+                                        <input type="password" id="password" name="password" 
+                                               placeholder="Create a password" 
+                                               required aria-required="true">
+                                        <button type="button" class="show-password-toggle" aria-label="Toggle password visibility">
+                                            <i class="bx bx-show"></i>
+                                        </button>
+                                    </div>
+                                </label>
+                                <div class="password-strength-indicator"></div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="confirmPassword">Confirm Password
-                                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required aria-required="true">
-                                    </label>
-                                </div>
-                            </fieldset>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password
+                                    <div class="input-wrapper">
+                                        <i class="bx bx-lock-alt"></i>
+                                        <input type="password" id="confirmPassword" name="confirmPassword" 
+                                               placeholder="Confirm your password" 
+                                               required aria-required="true">
+                                    </div>
+                                </label>
+                            </div>
 
-                            <fieldset>
-                                <legend>Terms & Conditions</legend>
-                                <div class="form-group">
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" name="terms" id="terms" required aria-required="true">
-                                        <span>I agree to the <a href="../../../terms.html">Terms of Service</a> and <a href="../../../privacy.html">Privacy Policy</a></span>
-                                    </label>
-                                </div>
-                            </fieldset>
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="terms" id="terms" required>
+                                    <span>I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a></span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="button expanded" aria-label="Create your account">Create Account</button>
+                        </form>
+
+                        
 
                             <div class="form-actions margin-top-xl">
-                                <button type="submit" class="button expanded" aria-label="Create your account">Create Account</button>
+                               
                                 <div class="text-center margin-top-md">
                                     <p>Already have an account? <a href="login.html">Login</a></p>
                                 </div>
@@ -120,24 +163,26 @@
             </div>
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer>
+    <br><br><br>
+     <!-- Footer -->
+     <footer>
         <div class="grid-container">
-            <div class="grid-x grid-margin-x">
-                <div class="cell medium-4">
+            <div class="grid-x">
+                <div class="footer-section">
                     <h4 class="footer-title">About ShareCare</h4>
                     <p>Connecting communities through meaningful donations.</p>
                 </div>
-                <div class="cell medium-4">
+                
+                <div class="footer-section">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="../../../about.html">About Us</a></li>
-                        <li><a href="../../../how-it-works.html">How It Works</a></li>
-                        <li><a href="../../../contact.html">Contact</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./how-it-works.html">How It Works</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="cell medium-4">
+                
+                <div class="footer-section">
                     <h4 class="footer-title">Connect With Us</h4>
                     <div class="footer-social-icons">
                         <a href="#" class="social-icon facebook" aria-label="Visit our Facebook page">
@@ -151,16 +196,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="cell">
-                    <div class="footer-copyright text-center">
-                        <p>&copy; 2024 ShareCare. All rights reserved.</p>
-                    </div>
+
+                <div class="footer-copyright">
+                    <p>&copy; 2024 ShareCare. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Foundation JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
     
+    <!-- Custom JavaScript -->
+    <script type="module" src="../../assets/js/auth.js"></script>
+    <script type="module" src="../../assets/js/pages/register.js"></script>
 </body>
 </html> 

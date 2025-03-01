@@ -1,36 +1,73 @@
-/* Foundation Color Overrides */
+/* Author: [Mohit shah] */
+/* Foundation Overrides */
 
-/* Buttons */
+/* Button Base */
 .button {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
+    color: var(--white);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-normal) var(--transition-timing);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.button:hover {
+    background: var(--primary-color-dark);
+}
+
+/* Button Sizes */
+.button.small {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--font-size-sm);
+}
+
+.button.large {
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--font-size-lg);
+}
+
+/* Login Button */
+.nav-menu-right .button {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.nav-menu-right .button:hover {
+    background: var(--primary-color);
     color: var(--white);
 }
 
-.button:hover, 
-.button:focus {
-    background-color: var(--primary-color-dark);
+.nav-menu-right .button i {
+    font-size: var(--font-size-lg);
+    transition: transform var(--transition-normal) var(--transition-timing);
 }
 
+.nav-menu-right .button:hover i {
+    transform: translateX(var(--space-xs));
+}
+
+/* Button States */
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Button with Icon */
+.button i {
+    font-size: var(--font-size-lg);
+}
+
+/* Button Variants */
 .button.secondary {
     background-color: var(--secondary-color);
 }
 
-.button.secondary:hover,
-.button.secondary:focus {
-    background-color: var(--secondary-color-dark);
-}
-
 .button.success {
     background-color: var(--success-color);
-}
-
-.button.success:hover,
-.button.success:focus {
-    background-color: var(--primary-color-dark);
-}
-
-.button.alert {
-    background-color: var(--danger-color);
 }
 
 .button.warning {
@@ -38,14 +75,52 @@
     color: var(--neutral-900);
 }
 
+.button.alert {
+    background-color: var(--danger-color);
+}
+
+/* Button Styles */
+.button.clear {
+    background: transparent;
+    color: var(--primary-color);
+}
+
+.button.clear:hover {
+    color: var(--primary-color-dark);
+    background: rgba(var(--primary-rgb), 0.1);
+}
+
+.button.hollow {
+    background: transparent;
+    border: 1px solid currentColor;
+    color: var(--primary-color);
+}
+
+.button.hollow:hover {
+    color: var(--primary-color-dark);
+    border-color: currentColor;
+    background: rgba(var(--primary-rgb), 0.1);
+}
+
+
+/* Form Elements */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.25);
+}
+
 /* Callouts */
 .callout {
-    border: 1px solid var(--neutral-200);
+    border-radius: var(--radius-md);
+    border: none;
+    box-shadow: var(--shadow-sm);
 }
 
 .callout.primary {
-    background-color: rgba(67, 170, 139, 0.1);
-    border-color: var(--primary-color);
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary-color-dark);
 }
 
 .callout.secondary {
@@ -54,7 +129,7 @@
 }
 
 .callout.success {
-    background-color: rgba(67, 170, 139, 0.1);
+    background-color: rgba(var(--primary-rgb), 0.1);
     border-color: var(--success-color);
 }
 
@@ -68,9 +143,91 @@
     border-color: var(--danger-color);
 }
 
+/* Interactive Elements */
+.switch-paddle {
+    background-color: var(--neutral-300);
+    transition: background-color var(--transition-normal) var(--transition-timing);
+}
+
+.switch-input:checked ~ .switch-paddle {
+    background-color: var(--primary-color);
+}
+
+/* Navigation */
+.tabs-title > a {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.tabs-title > a:hover,
+.tabs-title > a:focus {
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary-color);
+}
+
+.menu .is-active > a {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.menu a:hover {
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary-color);
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-normal) var(--transition-timing);
+}
+
+a:hover {
+    color: var(--primary-color-dark);
+}
+
+/* Pagination */
+.pagination .current {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.pagination a:hover {
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary-color);
+}
+
+/* Tooltips */
+.tooltip {
+    background-color: var(--secondary-color);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+}
+
+[class*="tooltip"]::before {
+    border-width: var(--space-xs);
+}
+
+.tooltip.top::before {
+    border-color: var(--secondary-color) transparent transparent;
+}
+
+.tooltip.bottom::before {
+    border-color: transparent transparent var(--secondary-color);
+}
+
+.tooltip.left::before {
+    border-color: transparent transparent transparent var(--secondary-color);
+}
+
+.tooltip.right::before {
+    border-color: transparent var(--secondary-color) transparent transparent;
+}
+
 /* Labels */
 .label {
-    background-color: var(--primary-color);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
 }
 
 .label.secondary {
@@ -92,11 +249,13 @@
 
 /* Progress Bars */
 .progress {
-    background-color: var(--neutral-200);
+    border-radius: var(--radius-full);
+    background: var(--neutral-200);
 }
 
 .progress-meter {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
+    border-radius: var(--radius-full);
 }
 
 .progress.secondary .progress-meter {
@@ -115,125 +274,20 @@
     background-color: var(--danger-color);
 }
 
-/* Switches */
-.switch-paddle {
-    background-color: var(--neutral-300);
-}
-
-.switch-input:checked ~ .switch-paddle {
-    background-color: var(--primary-color);
-}
-
-/* Tabs */
-.tabs-title > a {
-    color: var(--neutral-700);
-}
-
-.tabs-title > a:hover {
-    color: var(--primary-color);
-}
-
-.tabs-title > a[aria-selected='true'] {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-}
-
-/* Menu */
-.menu .is-active > a {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-.menu a:hover {
-    color: var(--primary-color);
-}
-
-a {
-    line-height: inherit;
-    color: var(--primary-color);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Pagination */
-.pagination .current {
-    background-color: var(--primary-color);
-}
-
-.pagination a:hover {
-    background-color: var(--neutral-100);
-    color: var(--primary-color);
-}
-
-/* Breadcrumbs */
-.breadcrumbs a {
-    color: var(--primary-color);
-}
-
-.breadcrumbs a:hover {
-    color: var(--primary-color-dark);
-}
-
-/* Forms */
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 1px var(--primary-color);
-}
-
 /* Dropdown */
 .dropdown-pane {
-    border-color: var(--neutral-200);
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
-}
-
-/* Tooltips */
-.tooltip {
-    background-color: var(--secondary-color);
-}
-
-.tooltip.top::before {
-    border-color: var(--secondary-color) transparent transparent;
-}
-
-.tooltip.bottom::before {
-    border-color: transparent transparent var(--secondary-color);
-}
-
-.tooltip.left::before {
-    border-color: transparent transparent transparent var(--secondary-color);
-}
-
-.tooltip.right::before {
-    border-color: transparent var(--secondary-color) transparent transparent;
+    border: 1px solid var(--neutral-200);
 }
 
 /* Additional Foundation Overrides */
-.button.clear {
-    color: var(--primary-color);
-}
-
-.button.clear:hover {
-    color: var(--primary-color-dark);
-}
-
 .button.clear.secondary {
     color: var(--secondary-color);
 }
 
 .button.clear.secondary:hover {
     color: var(--secondary-color-dark);
-}
-
-.button.hollow {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-.button.hollow:hover {
-    border-color: var(--primary-color-dark);
-    color: var(--primary-color-dark);
 }
 
 .button.hollow.secondary {

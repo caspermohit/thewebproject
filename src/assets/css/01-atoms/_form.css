@@ -1,33 +1,32 @@
-/* Form Atoms */
+/* Author: [goutham yadav] */
+/* Form Controls */
 input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea {
     width: 100%;
     padding: var(--space-sm);
-    border: 1px solid var(--neutral-300);
-    border-radius: 4px;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-sm);
     margin-bottom: var(--space-md);
-    font-family: var(--font-family);
-    transition: border-color var(--transition-normal);
+    font-family: inherit;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
+input:focus,
 textarea:focus {
-    border-color: var(--primary);
+    border-color: var(--primary-color);
     outline: none;
-    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+    box-shadow: 0 0 0 2px rgba(67, 170, 139, 0.25);
 }
 
 label {
     display: block;
     margin-bottom: var(--space-sm);
-    color: var(--neutral-800);
+    color: var(--gray-800);
     font-weight: 500;
 }
 
+/* Checkbox */
 .checkbox-label {
     display: flex;
     align-items: center;
@@ -39,37 +38,27 @@ label {
     margin: 0;
 }
 
+/* Placeholder */
 ::placeholder {
     color: var(--neutral-300);
 }
 
+/* Search Input */
 .map-search {
     display: flex;
     align-items: center;
-    border: 1px solid var(--neutral-300);
+    border: 1px solid var(--gray-300);
     border-radius: var(--radius-sm);
     overflow: hidden;
-    margin-bottom: 0;
 }
 
-.map-search input[type="text"] {
+.map-search input {
     border: none;
-    margin-bottom: 0;
+    margin: 0;
     flex: 1;
 }
 
-.map-search .input-group-button {
-    margin: 0;
-}
-
-.map-search .input-group-button .button {
+.map-search .button {
     margin: 0;
     border-radius: 0;
-    height: 100%;
-    padding: var(--space-sm) var(--space-md);
-}
-
-.map-search input[type="text"]:focus {
-    box-shadow: none;
-    border: none;
 } 

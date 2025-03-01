@@ -4,19 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - Share&Care</title>
-  
+    <title>My Profile - Share&Care</title>
+    
     <!-- Foundation CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css">
     
-    <!-- Main CSS File (Atomic Design Structure) -->
+    <!-- Main CSS Files -->
     <link rel="stylesheet" href="../../../src/assets/css/styles.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
+    <!-- Box Icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <style>
+        .profile-section {
+            margin-bottom: 2rem;
+        }
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        .stats-card {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .stats-card h3 {
+            font-size: 2rem;
+            margin: 0;
+            color: var(--primary-color);
+        }
+        .stats-card p {
+            margin: 0;
+            color: #666;
+        }
+        .donation-history {
+            margin-top: 2rem;
+        }
+        .settings-section {
+            margin-top: 2rem;
+        }
+        .notification-preference {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -29,150 +71,313 @@
                 
                 <div class="nav-brand">Share&Care</div>
                 
-                <ul class="nav-menu nav-menu-left">
+                <ul class="nav-menu">
                     <li><a href="../../../index.html"><i class="bx bx-home nav-icon"></i> Home</a></li>
-                    <li><a href="/src/pages/main/donate.html"><i class="bx bx-donate-heart nav-icon"></i> Donate</a></li>
-                    <li><a href="/src/pages/main/browse.html"><i class="bx bx-search nav-icon"></i> Browse</a></li>
-                </ul>
-                
-                <ul class="nav-menu nav-menu-right">
-                    <li><a href="src/pages/auth/login.html" class="button small"><i class="bx bx-user nav-icon"></i> Login</a></li>
-                    <li><a href="../main/history.html"><i class="bx bx-history nav-icon"></i> History</a></li>
-                    <li><a href="../main/notifications.html"><i class="bx bx-bell nav-icon"></i> Notifications</a></li>
+                    <li><a href="donate.html"><i class="bx bx-donate-heart nav-icon"></i> Donate</a></li>
+                    <li><a href="browse.html"><i class="bx bx-search nav-icon"></i> Browse</a></li>
+                    <li><a href="history.html"><i class="bx bx-history nav-icon"></i> History</a></li>
+                    <li><a href="notifications.html"><i class="bx bx-bell nav-icon"></i> Notifications</a></li>
+                    <li class="auth-menu">
+                        <a href="#" class="auth-toggle">
+                            <i class="bx bx-user nav-icon"></i>
+                            <span>Account</span>
+                            <i class="bx bx-chevron-down"></i>
+                        </a>
+                        <div class="auth-dropdown">
+                            <div class="dropdown-header">
+                                <i class="bx bx-user-circle"></i>
+                                <span>Welcome!</span>
+                            </div>
+                            <!-- Logged out state -->
+                            <ul class="logged-out-menu">
+                                <li><a href="../auth/login.html"><i class="bx bx-log-in"></i> Login</a></li>
+                                <li><a href="../auth/register.html"><i class="bx bx-user-plus"></i> Register</a></li>
+                                <li><a href="../auth/forgot-password.html"><i class="bx bx-key"></i> Forgot Password</a></li>
+                            </ul>
+                            <!-- Logged in state -->
+                            <ul class="logged-in-menu" style="display: none;">
+                                <li><a href="../main/profile.html"><i class="bx bx-user"></i> My Profile</a></li>
+                                <li><a href="../main/settings.html"><i class="bx bx-cog"></i> Settings</a></li>
+                                <li class="admin-only" style="display: none;"><a href="/src/pages/dashboard/index.html"><i class="bx bx-grid-alt"></i> Dashboard</a></li>
+                                <li><a href="#" class="logout-link"><i class="bx bx-log-out"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-
     <div class="grid-container">
         <ul class="breadcrumbs">
             <li><a href="../../../index.html">Home</a></li>
-            <li>My Profile</li>
+            <li>Profile</li>
         </ul>
     </div>
 
     <main class="grid-container">
         <div class="grid-x grid-padding-x">
-            <!-- Basic Profile Info -->
-            <div class="cell medium-4">
-                <div class="card">
-                    <div class="card-section">
-                        <h3 class="card-title">Profile Information</h3>
-                        <form>
-                            <div class="profile-picture-upload text-center margin-bottom-md">
-                                <div class="profile-image-container">
-                                    <img src="../../assets/images/hero/user1.jpeg" alt="Profile Picture" id="profileImage" class="profile-image">
-                                    <label for="profilePicture" class="profile-upload-label">
-                                        <i class="bx bx-camera"></i>
-                                        <span class="visually-hidden">Change Profile Picture</span>
-                                    </label>
-                                </div>
-                                <input type="file" id="profilePicture" name="profilePicture" accept="image/*" class="hide">
-                                <p class="help-text">Click the camera icon to change profile picture</p>
-                            </div>
-
-                            <label for="fullName">Full Name
-                                <input type="text" id="fullName" name="fullName">
-                            </label>
-                            <label for="email">Email
-                                <input type="email" id="email" name="email">
-                            </label>
-                            <label for="location">Location
-                                <input type="text" id="location" name="location">
-                            </label>
-                            <button type="submit" class="button expanded">Save Changes</button>
-                        </form>
-                    </div>
-                </div>
+            <!-- Profile Navigation -->
+            <div class="cell medium-3">
+                <ul class="vertical menu" data-smooth-scroll>
+                    <li><a href="#personal-info">Personal Information</a></li>
+                    <li><a href="#donation-stats">Donation Statistics</a></li>
+                    <li><a href="#donation-history">Donation History</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                </ul>
             </div>
 
-            <!-- Activity Section -->
-            <div class="cell medium-8">
-                <!-- My Donations -->
-                <h3 class="section-header">My Donations</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Status</th>
-                            <th>Date</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sample Item</td>
-                            <td>Available</td>
-                            <td>2024-01-01</td>
-                            <td>
-                                <button class="button tiny">Edit</button>
-                                <button class="button tiny alert">Remove</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- Profile Content -->
+            <div class="cell medium-9">
+                <!-- Personal Information Section -->
+                <section id="personal-info" class="profile-section">
+                    <div class="card">
+                        <div class="card-section">
+                            <h2>Personal Information</h2>
+                            <div class="grid-x grid-padding-x align-middle">
+                                <div class="cell medium-4 text-center">
+                                    <img src="" alt="Profile Picture" class="profile-avatar" id="profileAvatar">
+                                    <button type="button" class="button small" id="changeAvatarBtn">
+                                        Change Picture
+                                    </button>
+                                </div>
+                                <div class="cell medium-8">
+                                    <form id="profileForm">
+                                        <div class="grid-x grid-padding-x">
+                                            <div class="cell medium-6">
+                                                <label for="firstName">First Name
+                                                    <input type="text" id="firstName" name="first_name" required>
+                                                </label>
+                                            </div>
+                                            <div class="cell medium-6">
+                                                <label for="lastName">Last Name
+                                                    <input type="text" id="lastName" name="last_name" required>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <label for="email">Email
+                                            <input type="email" id="email" name="email" required>
+                                        </label>
+                                        <label for="location">Location
+                                            <input type="text" id="location" name="location" placeholder="Enter your location">
+                                        </label>
+                                        <label for="bio">Bio
+                                            <textarea id="bio" name="bio" rows="3" placeholder="Tell us about yourself"></textarea>
+                                        </label>
+                                        <button type="submit" class="button">Save Changes</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                <!-- My Requests -->
-                <h3 class="section-header">My Requests</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Status</th>
-                            <th>Date</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Requested Item</td>
-                            <td>Pending</td>
-                            <td>2024-01-01</td>
-                            <td>
-                                <button class="button tiny">View</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- Donation Statistics Section -->
+                <section id="donation-stats" class="profile-section">
+                    <div class="card">
+                        <div class="card-section">
+                            <h2>Donation Statistics</h2>
+                            <div class="grid-x grid-padding-x">
+                                <div class="cell medium-4">
+                                    <div class="stats-card">
+                                        <h3 id="itemsDonated">0</h3>
+                                        <p>Items Donated</p>
+                                    </div>
+                                </div>
+                                <div class="cell medium-4">
+                                    <div class="stats-card">
+                                        <h3 id="itemsReceived">0</h3>
+                                        <p>Items Received</p>
+                                    </div>
+                                </div>
+                                <div class="cell medium-4">
+                                    <div class="stats-card">
+                                        <h3 id="rating">0⭐</h3>
+                                        <p>Rating</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Donation History Section -->
+                <section id="donation-history" class="profile-section">
+                    <div class="card">
+                        <div class="card-section">
+                            <h2>Donation History</h2>
+                            <ul class="tabs" data-tabs id="history-tabs">
+                                <li class="tabs-title is-active"><a href="#donated" aria-selected="true">Items Donated</a></li>
+                                <li class="tabs-title"><a href="#received">Items Received</a></li>
+                            </ul>
+                            <div class="tabs-content" data-tabs-content="history-tabs">
+                                <div class="tabs-panel is-active" id="donated">
+                                    <table class="hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Item</th>
+                                                <th>Date</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="donatedItemsList">
+                                            <!-- Donated items will be dynamically inserted here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tabs-panel" id="received">
+                                    <table class="hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Item</th>
+                                                <th>Date</th>
+                                                <th>Donor</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="receivedItemsList">
+                                            <!-- Received items will be dynamically inserted here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settings" class="profile-section">
+                    <div class="card">
+                        <div class="card-section">
+                            <h2>Settings</h2>
+                            
+                            <!-- Notification Preferences -->
+                            <div class="settings-section">
+                                <h3>Notification Preferences</h3>
+                                <div class="notification-preference">
+                                    <span>Email Notifications</span>
+                                    <div class="switch">
+                                        <input class="switch-input" id="emailNotif" type="checkbox" name="emailNotif">
+                                        <label class="switch-paddle" for="emailNotif">
+                                            <span class="show-for-sr">Email Notifications</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="notification-preference">
+                                    <span>Push Notifications</span>
+                                    <div class="switch">
+                                        <input class="switch-input" id="pushNotif" type="checkbox" name="pushNotif">
+                                        <label class="switch-paddle" for="pushNotif">
+                                            <span class="show-for-sr">Push Notifications</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="notification-preference">
+                                    <span>SMS Notifications</span>
+                                    <div class="switch">
+                                        <input class="switch-input" id="smsNotif" type="checkbox" name="smsNotif">
+                                        <label class="switch-paddle" for="smsNotif">
+                                            <span class="show-for-sr">SMS Notifications</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Privacy Settings -->
+                            <div class="settings-section">
+                                <h3>Privacy Settings</h3>
+                                <div class="notification-preference">
+                                    <span>Show Email Address</span>
+                                    <div class="switch">
+                                        <input class="switch-input" id="showEmail" type="checkbox" name="showEmail">
+                                        <label class="switch-paddle" for="showEmail">
+                                            <span class="show-for-sr">Show Email Address</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="notification-preference">
+                                    <span>Show Location</span>
+                                    <div class="switch">
+                                        <input class="switch-input" id="showLocation" type="checkbox" name="showLocation">
+                                        <label class="switch-paddle" for="showLocation">
+                                            <span class="show-for-sr">Show Location</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="notification-preference">
+                                    <span>Show Donation History</span>
+                                    <div class="switch">
+                                        <input class="switch-input" id="showHistory" type="checkbox" name="showHistory">
+                                        <label class="switch-paddle" for="showHistory">
+                                            <span class="show-for-sr">Show Donation History</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Account Actions -->
+                            <div class="settings-section">
+                                <h3>Account Actions</h3>
+                                <button type="button" class="button" id="changePasswordBtn">Change Password</button>
+                                <button type="button" class="button alert" id="deleteAccountBtn">Delete Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
 
-    <!-- Include Footer -->
+    <!-- Footer -->
     <footer>
         <div class="grid-container">
-            <div class="grid-x grid-margin-x">
-                <div class="cell medium-4">
-                    <h4 class="footer-title">About Share&Care</h4>
+            <div class="grid-x">
+                <div class="footer-section">
+                    <h4 class="footer-title">About ShareCare</h4>
                     <p>Connecting communities through meaningful donations.</p>
                 </div>
-                <div class="cell medium-4">
+                
+                <div class="footer-section">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#" class="facebook">About Us</a></li>
-                        <li><a href="#" class="facebook">How It Works</a></li>
-                        <li><a href="#" class="facebook">Contact</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./how-it-works.html">How It Works</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="cell medium-4">
+                
+                <div class="footer-section">
                     <h4 class="footer-title">Connect With Us</h4>
                     <div class="footer-social-icons">
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="social-icon facebook" aria-label="Visit our Facebook page">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon twitter" aria-label="Follow us on Twitter">
+                            <i class="bx bxl-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon instagram" aria-label="Follow us on Instagram">
+                            <i class="bx bxl-instagram"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="cell">
-                    <div class="footer-copyright text-center">
-                        <p>&copy; 2024 Share&Care. All rights reserved.</p>
-                    </div>
+
+                <div class="footer-copyright">
+                    <p>&copy; 2024 ShareCare. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Foundation JavaScript -->
-   
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+    
+    <!-- Custom JavaScript -->
+    <script type="module" src="../../../src/assets/js/auth.js"></script>
+    <script type="module" src="../../../src/assets/js/pages/profile.js"></script>
 </body>
 </html>

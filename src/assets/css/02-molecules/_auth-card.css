@@ -1,0 +1,11 @@
+.auth-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.auth-card .card-section {
+    padding: 2rem;
+} 
