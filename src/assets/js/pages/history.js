@@ -1,4 +1,10 @@
-// History page functionality
+
+/**
+ * History page functionality
+ * @author Rupesh Gaur
+ * Handles history page functionality, including item management, user management, and conversation management
+ */
+
 import itemsService from '../modules/items.js';
 import authService from '../auth.js';
 import uiHandler from '../modules/ui.js';
@@ -164,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="cell small-4">
                     <div class="stat-card">
-                        <h3>${currentUser.donation_stats.rating}⭐</h3>
+                        <h3>${currentUser.donation_stats.rating}<i class='bx bxs-star' style='font-size: 2rem;'></i></h3>
                         <p>Rating</p>
                     </div>
                 </div>

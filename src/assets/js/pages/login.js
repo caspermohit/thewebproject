@@ -1,4 +1,10 @@
-// Login page functionality
+
+/**
+ * Login page functionality
+ * @author Mohit Shah
+ * Handles login page functionality, including authentication, form validation, and UI updates
+ */
+
 import authService from '../auth.js';
 import uiHandler from '../modules/ui.js';
 

@@ -1,4 +1,9 @@
-// Browse page functionality
+/**
+ * Browse page functionality
+ * @author Sudheer
+ * Handles item browsing, filtering, and search functionality
+ */
+
 import itemsService from '../modules/items.js';
 import uiHandler from '../modules/ui.js';
 import authService from '../auth.js';

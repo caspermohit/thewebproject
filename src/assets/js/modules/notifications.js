@@ -1,4 +1,10 @@
-// Notifications Service for Share&Care Platform
+
+/**
+ * Notifications Service for Share&Care Platform
+ * @author Rupesh Gaur
+ * Handles notification functionality, including notification management, and UI updates
+ */
+
 import authService from '../auth.js';
 import uiHandler from './ui.js';
 

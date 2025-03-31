@@ -1,4 +1,10 @@
-// Notifications page functionality
+
+/**
+ * Notifications page functionality
+ * @author Rupesh Gaur
+ * Handles notifications page functionality, including notification functionality, and UI updates
+ */
+
 import notificationsService from '../modules/notifications.js';
 import authService from '../auth.js';
 import uiHandler from '../modules/ui.js';

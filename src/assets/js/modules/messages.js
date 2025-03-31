@@ -1,3 +1,9 @@
+/**
+ * Messages Service
+ * @author Rupesh Gaur
+ * Handles real-time messaging, chat functionality, and conversation management
+ */
+
 // Messages module for Share&Care Platform
 import uiHandler from './ui.js';
 import authService from '../auth.js';

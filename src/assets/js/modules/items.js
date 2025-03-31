@@ -1,3 +1,9 @@
+/**
+ * Items Service
+ * @author Sudheer chavali
+ * Handles item management, donation system, and item-related operations
+ */
+
 // Items Service for Share&Care Platform
 import authService from '../auth.js';
 import alertsService from './alerts.js';

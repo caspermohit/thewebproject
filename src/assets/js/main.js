@@ -1,4 +1,9 @@
-// Main JavaScript file for Share&Care platform
+
+/**
+ * Main JavaScript file for Share&Care platform
+ * @author Mohit Shah
+ * Handles main functionality, including mobile menu toggle, stats animation, and card hover effects
+ */
 
 // DOM Elements
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');

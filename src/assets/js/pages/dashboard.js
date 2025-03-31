@@ -1,4 +1,9 @@
-// Dashboard functionality
+/**
+ * Dashboard functionality
+ * @author mohit shah
+ * Handles dashboard functionality, including item management, user management, and conversation management
+ */
+
 import itemsService from '../modules/items.js';
 import messagesService from '../modules/messages.js';
 import authService from '../auth.js';

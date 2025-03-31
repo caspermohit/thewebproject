@@ -1,3 +1,10 @@
+
+/**
+ * Users data for Share&Care Platform
+ * @author Mohit Shah
+ * Handles user data, including user management, and UI updates
+ */
+
 {
   "users": [
     {

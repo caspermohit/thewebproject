@@ -1,3 +1,9 @@
+/**
+ * UI Handler Service
+ * @author Goutam Yadav
+ * Handles UI components, animations, form validations, and notifications
+ */
+
 // UI Module for Share&Care Platform
 import authService from '../auth.js';
 

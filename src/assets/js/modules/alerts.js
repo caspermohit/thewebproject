@@ -1,4 +1,9 @@
-// Alerts Service for Share&Care Platform
+/**
+ * Alerts Service for Share&Care Platform
+ * @author Rupesh Gaur
+ * Handles alert functionality, including alert management, and notification functionality
+ */
+
 import authService from '../auth.js';
 import notificationsService from './notifications.js';
 

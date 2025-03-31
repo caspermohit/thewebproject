@@ -1,4 +1,10 @@
-// Donation page functionality
+
+/**
+ * Donation page functionality
+ * @author Sudheer
+ * Handles donation functionality, including item management, form validation, and location services
+ */
+
 import itemsService from '../modules/items.js';
 import formHandler from '../modules/forms.js';
 import uiHandler from '../modules/ui.js';

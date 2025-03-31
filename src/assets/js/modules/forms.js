@@ -1,4 +1,10 @@
-// Form handling and validation module
+
+/**
+ * Form handling and validation module
+ * @author Mohit Shah
+ * Handles form handling and validation, including password requirements, form submission, and field validation
+ */
+
 import authService from '../auth.js';
 
 class FormHandler {

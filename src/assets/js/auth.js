@@ -1,4 +1,8 @@
-// Authentication Service for Share&Care Platform
+/**
+ * Authentication Service
+ * @author Mohit Shah
+ * Handles user authentication, registration, and session management
+ */
 
 class AuthService {
     constructor() {
@@ -19,10 +23,14 @@ class AuthService {
             let data = JSON.parse(localStorage.getItem('sharecare_users'));
             
             // If not in localStorage or data is empty, fetch from file
-            if (!data || !data.users || data.users.length === 0) {
+            if (!data || !data.users || !data.users.length) {
                 const response = await fetch('../../../src/assets/data/users.json');
                 if (!response.ok) {
-                    return { success: false };
+                    return { 
+                        success: false,
+                        error: 'server_error',
+                        message: 'Failed to fetch user data'
+                    };
                 }
                 data = await response.json();
                 localStorage.setItem('sharecare_users', JSON.stringify(data));
@@ -35,48 +43,92 @@ class AuthService {
             );
             
             if (!user) {
-                return { success: false };
+                return { 
+                    success: false,
+                    error: 'user_not_found',
+                    message: 'Invalid username or password'
+                };
             }
-            
+
+            // Store user data and generate tokens
+            localStorage.setItem('currentUser', JSON.stringify(user));
             this.setCurrentUser(user);
             this.generateAndSetTokens(user);
             this.updateAuthUI();
+            
             return {
                 success: true,
                 user: this.sanitizeUser(user)
             };
         } catch (error) {
-            return { success: false };
+            console.error('Login error:', error);
+            return { 
+                success: false,
+                error: 'server_error',
+                message: 'An error occurred during login'
+            };
         }
     }
 
     logout() {
+        localStorage.removeItem(this.TOKEN_KEY);
+        localStorage.removeItem(this.REFRESH_TOKEN_KEY);
+        localStorage.removeItem('currentUser');
+        this.currentUser = null;
+        this.isAuthenticated = false;
+        this.updateAuthUI();
+        
+        // Redirect to login page if not already there
+        if (!window.location.pathname.includes('login.html')) {
+            window.location.href = '/src/pages/auth/login.html';
+        }
+    }
+
+    checkAuthStatus() {
+        try {
+            const token = localStorage.getItem(this.TOKEN_KEY);
+            const userStr = localStorage.getItem('currentUser');
+            
+            if (!token || !userStr) {
+                this.handleInvalidAuth();
+                return false;
+            }
+
+            // Parse user data
+            const user = JSON.parse(userStr);
+            
+            // Check token expiration
+            const tokenData = this.parseToken(token);
+            if (!tokenData || tokenData.exp < Date.now() / 1000) {
+                this.handleInvalidAuth();
+                return false;
+            }
+
+            this.currentUser = user;
+            this.isAuthenticated = true;
+            this.updateAuthUI();
+            return true;
+        } catch (error) {
+            console.error('Auth status check error:', error);
+            this.handleInvalidAuth();
+            return false;
+        }
+    }
+
+    handleInvalidAuth() {
         this.currentUser = null;
         this.isAuthenticated = false;
         localStorage.removeItem(this.TOKEN_KEY);
         localStorage.removeItem(this.REFRESH_TOKEN_KEY);
-        this.updateAuthUI();
-        
-        // Redirect to home page
-        window.location.href = '/index.html';
-    }
+        localStorage.removeItem('currentUser');
 
-    checkAuthStatus() {
-        const token = localStorage.getItem(this.TOKEN_KEY);
-        if (token) {
-            try {
-                // In a real application, verify the token with the backend
-                const userData = this.parseToken(token);
-                this.currentUser = userData;
-                this.isAuthenticated = true;
-                this.updateAuthUI();
-                return true;
-            } catch (error) {
-                this.logout();
-                return false;
-            }
+        // Only redirect to login if we're not already on a public page
+        const publicPages = ['login.html', 'register.html', 'forgot-password.html', 'index.html'];
+        const currentPage = window.location.pathname.split('/').pop();
+        
+        if (!publicPages.includes(currentPage)) {
+            window.location.href = '/src/pages/auth/login.html';
         }
-        return false;
     }
 
     updateAuthUI() {
@@ -137,13 +189,25 @@ class AuthService {
     setCurrentUser(user) {
         this.currentUser = user;
         this.isAuthenticated = true;
+        localStorage.setItem('currentUser', JSON.stringify(user));
     }
 
     generateAndSetTokens(user) {
-        // In a real application, these would be JWT tokens from the backend
-        const token = btoa(JSON.stringify(user));
-        const refreshToken = btoa(JSON.stringify({ userId: user.id, timestamp: Date.now() }));
-        
+        // Generate tokens with proper expiration
+        const token = btoa(JSON.stringify({
+            id: user.id,
+            username: user.username,
+            role: user.role,
+            exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60), // 24 hours
+            iat: Math.floor(Date.now() / 1000)
+        }));
+
+        const refreshToken = btoa(JSON.stringify({
+            id: user.id,
+            exp: Math.floor(Date.now() / 1000) + (7 * 24 * 60 * 60), // 7 days
+            iat: Math.floor(Date.now() / 1000)
+        }));
+
         localStorage.setItem(this.TOKEN_KEY, token);
         localStorage.setItem(this.REFRESH_TOKEN_KEY, refreshToken);
     }

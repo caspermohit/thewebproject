@@ -114,10 +114,38 @@
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="button-group">
-                        <button type="button" class="button" aria-label="Request this couch">Request Item</button>
-                        <a href="../main/messages.html" class="button" aria-label="Message donor about this couch">Message Donor</a>
-                        <a href="../main/map.html" class="button" aria-label="View couch location on map">
+                    <div class="item-actions button-group">
+                        ${isAvailable && !isOwnItem ? `
+                            <button type="button" class="button" id="requestItemBtn" aria-label="Request this ${item.title}">
+                                Request Item
+                            </button>
+                            <button type="button" class="button" id="messageBtn" aria-label="Message donor about this ${item.title}">
+                                Message Donor
+                            </button>
+                        ` : ''}
+                        
+                        ${isOwnItem ? `
+                            ${isReserved ? `
+                                <button type="button" class="button success" id="markPickedUpBtn" aria-label="Mark ${item.title} as picked up">
+                                    <i class="bx bx-check"></i> Mark as Picked Up
+                                </button>
+                            ` : ''}
+                            <button type="button" class="button" id="editItemBtn">Edit Item</button>
+                            <button type="button" class="button alert" id="deleteItemBtn" aria-label="Delete this ${item.title}">Delete Item</button>
+                        ` : ''}
+                        
+                        ${isRecipient ? `
+                            ${isReserved ? `
+                                <button type="button" class="button success" id="markPickedUpBtn" aria-label="Mark ${item.title} as picked up">
+                                    <i class="bx bx-check"></i> Mark as Picked Up
+                                </button>
+                                <button type="button" class="button" id="messageBtn" aria-label="Message donor about this ${item.title}">
+                                    <i class="bx bx-message"></i> Message Donor
+                                </button>
+                            ` : ''}
+                        ` : ''}
+                        
+                        <a href="../main/map.html?item=${item.id}" class="button" aria-label="View ${item.title} location on map">
                             <i class="bx bx-map"></i> View on Map
                         </a>
                     </div>

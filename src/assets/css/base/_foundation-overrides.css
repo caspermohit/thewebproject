@@ -12,6 +12,11 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm);
+    margin: 0 1rem 1rem 0;
+}
+
+.button:last-child {
+    margin-right: 0;
 }
 
 .button:hover {
@@ -298,4 +303,12 @@ a:hover {
 .button.hollow.secondary:hover {
     border-color: var(--secondary-color-dark);
     color: var(--neutral-100);
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
 } 

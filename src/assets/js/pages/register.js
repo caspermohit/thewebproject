@@ -1,4 +1,9 @@
-// Registration page functionality
+/**
+ * Registration page functionality
+ * @author Mohit Shah
+ * Handles registration page functionality, including authentication, form validation, and UI updates
+ */
+
 import authService from '../auth.js';
 import formHandler from '../modules/forms.js';
 import uiHandler from '../modules/ui.js';

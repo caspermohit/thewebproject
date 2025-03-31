@@ -1,4 +1,9 @@
-// Messages page functionality
+/**
+ * Messages page functionality
+ * @author Zia Sheikh
+ * Handles messages page functionality, including message functionality, and UI updates
+ */
+
 import messagesService from '../modules/messages.js';
 import authService from '../auth.js';
 import uiHandler from '../modules/ui.js';

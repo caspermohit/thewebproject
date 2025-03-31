@@ -1,4 +1,10 @@
-// Profile page functionality
+
+/**
+ * Profile page functionality
+ * @author Mohit Shah
+ * Handles profile page functionality, including profile functionality, and UI updates
+ */
+
 import authService from '../auth.js';
 import itemsService from '../modules/items.js';
 import uiHandler from '../modules/ui.js';
@@ -200,7 +206,7 @@ function loadUserProfile(user) {
 function loadDonationStats(user) {
     document.getElementById('itemsDonated').textContent = user.donation_stats.items_donated;
     document.getElementById('itemsReceived').textContent = user.donation_stats.items_received;
-    document.getElementById('rating').textContent = `${user.donation_stats.rating}⭐`;
+    document.getElementById('rating').textContent = `${user.donation_stats.rating} `;
 }
 
 function loadDonationHistory(user) {

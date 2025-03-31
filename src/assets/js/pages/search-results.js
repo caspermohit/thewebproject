@@ -1,4 +1,9 @@
-// Search Results page functionality
+/**
+ * Search Results page functionality
+ * @author sudheer chavali
+ * Handles search results page functionality, including item management, alert functionality, and UI updates
+ */
+
 import itemsService from '../modules/items.js';
 import alertsService from '../modules/alerts.js';
 import authService from '../auth.js';

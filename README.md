@@ -77,4 +77,37 @@ This project uses vanilla HTML, CSS, and JavaScript. The CSS is organized using 
 
 ## License
 
-This project is licensed under the Group-4. 
+This project is licensed under the Group-4.
+## JavaScript Structure
+```
+src/assets/js/
+├── modules/
+│   ├── auth.js       # Auth Service (Mohit Shah)
+│   ├── items.js      # Items Service (Sudheer)
+│   ├── map.js        # Map Service (Zia Sheikh)
+│   ├── messages.js   # Messages Service (Rupesh Gaur)
+│   └── ui.js         # UI Handler (Goutam Yadav)
+└── pages/
+    ├── auth/
+    │   ├── login.js      # Login Page (Mohit Shah)
+    │   └── register.js   # Registration Page (Mohit Shah)
+    ├── main/
+    │   ├── browse.js     # Browse Items (Sudheer)
+    │   ├── donate.js     # Donate Items (Sudheer)
+    │   ├── history.js    # Donation History (Sudheer)
+    │   ├── home.js       # Home Page (Mohit Shah)
+    │   ├── item-details.js # Item Details (Mohit Shah)
+    │   ├── map.js        # Map View (Zia Sheikh)
+    │   ├── messages.js   # Messages Page (Rupesh Gaur)
+    │   ├── notifications.js # Notifications (Rupesh Gaur)
+    │   ├── profile.js    # User Profile (Mohit Shah)
+    │   ├── search-results.js # Search Results (Sudheer)
+    │   └── dashboard.js  # Admin Dashboard (Mohit Shah)
+```
+
+## Team Member Contributions
+- Mohit Shah: Authentication system, user profile management, login/register functionality, password recovery, and session management
+- Sudheer: Item donation system, item management, item status updates, item search and filtering, and item categories
+- Zia Sheikh: Interactive map integration, location services, geocoding, map markers and clustering, and distance calculations
+- Rupesh Gaur: Real-time messaging system, chat functionality, message notifications, conversation management, and message history
+- Goutam Yadav: UI components, animations and transitions, form validations, modal dialogs, and toast notifications

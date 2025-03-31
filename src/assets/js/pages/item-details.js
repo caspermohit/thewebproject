@@ -1,4 +1,10 @@
-// Item Details page functionality
+
+/**
+ * Item Details page functionality
+ * @author Mohit Shah
+ * Handles item details page functionality, including item management, message functionality, and UI updates
+ */
+
 import itemsService from '../modules/items.js';
 import messagesService from '../modules/messages.js';
 import uiHandler from '../modules/ui.js';
@@ -73,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h3>Pickup Information</h3>
             <p>Available for pickup: ${item.pickup_details.availability}</p>
             <p>Location: ${item.location.address}</p>
-            <p>Donor: ${item.donor.name} (Rating: ${item.donor.rating}⭐)</p>
+            <p>Donor: ${item.donor.name} (Rating: ${item.donor.rating} <i class='bx bxs-star'></i>)</p>
             <p>Instructions: ${item.pickup_details.instructions}</p>
         `;
     }
@@ -97,28 +103,34 @@ document.addEventListener('DOMContentLoaded', () => {
                     Message Donor
                 </button>
             ` : ''}
-            ${isOwnItem ? `
+            
+           
+            ${isRecipient ? `
+                ${isReserved ? `
+                    <button type="button" class="button success" id="markPickedUpBtn" aria-label="Mark ${item.title} as picked up">
+                        <i class="bx bx-check"></i> Mark as Picked Up
+                    </button>
+                    
+                    <button type="button" class="button" id="messageBtn" aria-label="Message donor about this ${item.title}">
+                        <i class="bx bx-message"></i> Message Donor
+                    </button>
+                ` : ''}
+            ` : ''}
+            
+            <a href="../main/map.html?item=${item.id}" class="button" aria-label="View ${item.title} location on map">
+                <i class="bx bx-map"></i> View on Map
+            </a>
+             ${isOwnItem ? `
                 ${isReserved ? `
                     <button type="button" class="button success" id="markPickedUpBtn" aria-label="Mark ${item.title} as picked up">
                         <i class="bx bx-check"></i> Mark as Picked Up
                     </button>
                 ` : ''}
                 <button type="button" class="button" id="editItemBtn">Edit Item</button>
+                
                 <button type="button" class="button alert" id="deleteItemBtn" aria-label="Delete this ${item.title}">Delete Item</button>
             ` : ''}
-            ${isRecipient ? `
-                ${isReserved ? `
-                    <button type="button" class="button success" id="markPickedUpBtn" aria-label="Mark ${item.title} as picked up">
-                        <i class="bx bx-check"></i> Mark as Picked Up
-                    </button>
-                    <button type="button" class="button" id="messageBtn" aria-label="Message donor about this ${item.title}">
-                        <i class="bx bx-message"></i> Message Donor
-                    </button>
-                ` : ''}
-            ` : ''}
-            <a href="../main/map.html?item=${item.id}" class="button" aria-label="View ${item.title} location on map">
-                <i class="bx bx-map"></i> View on Map
-            </a>
+            
         `;
 
         // Add event listener for picked up button
@@ -325,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <label for="editPickupDetails">Pickup Details
                                     <textarea id="editPickupDetails" name="pickup_details" rows="3" required>${item.pickup_details.instructions}</textarea>
                                 </label>
-
+                                <br>
                                 <button type="submit" class="button expanded">Save Changes</button>
                             </form>
                         </div>
@@ -381,7 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h3>Pickup Information</h3>
                                 <p>Available for pickup: ${item.pickup_details.availability}</p>
                                 <p>Location: ${item.location.address}</p>
-                                <p>Donor: ${item.donor.name} (Rating: ${item.donor.rating}⭐)</p>
+                                <p>Donor: ${item.donor.name} (Rating: ${item.donor.rating} <i class='bx bxs-star'></i>)</p>
                                 <p>Instructions: ${item.pickup_details.instructions}</p>
                             `;
 

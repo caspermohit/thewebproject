@@ -1,0 +1,16 @@
+.card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    z-index: 1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+

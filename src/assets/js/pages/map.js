@@ -1,3 +1,9 @@
+/**
+ * Map Page
+ * @author Zia Sheikh
+ * Handles map integration, location services, and map functionality
+ */
+
 // Map page functionality
 import itemsService from '../modules/items.js';
 import uiHandler from '../modules/ui.js';

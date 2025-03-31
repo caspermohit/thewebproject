@@ -1,4 +1,9 @@
-// Home page functionality
+/**
+ * Home page functionality
+ * @author Mohit Shah
+ * Handles home page functionality, including item management, and UI updates
+ */
+
 import itemsService from '../modules/items.js';
 import uiHandler from '../modules/ui.js';
 
