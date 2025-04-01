@@ -103,6 +103,7 @@ async function loadUsers() {
                 <td>${user.id}</td>
                 <td>${user.first_name} ${user.last_name}</td>
                 <td>${user.email}</td>
+                <td>${user.password_hash}</td>
                 <td>${user.role}</td>
                 <td>${formatDate(user.created_at || new Date())}</td>
                 <td><span class="status-badge status-${getStatusBadgeClass(user.status)}">${user.status || 'Active'}</span></td>

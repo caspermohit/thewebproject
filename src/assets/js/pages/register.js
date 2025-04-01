@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const loader = uiHandler.showLoading();
             
             try {
+                // Add a small delay to make loading state more noticeable
+                await new Promise(resolve => setTimeout(resolve, 500));
+
                 // Validate password match
                 if (formData.password !== formData.confirmPassword) {
                     uiHandler.showNotification('Passwords do not match', 'error');

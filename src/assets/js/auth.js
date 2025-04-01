@@ -11,31 +11,10 @@ class AuthService {
         this.TOKEN_KEY = 'sharecare_token';
         this.REFRESH_TOKEN_KEY = 'sharecare_refresh_token';
         
-        // Only check auth status if we're not on a public page
-        if (!this.isPublicPage()) {
-            this.checkAuthStatus();
-        }
-        
+        // Check if user is already logged in
+        this.checkAuthStatus();
+        // Update UI on load
         this.updateAuthUI();
-    }
-
-    isPublicPage() {
-        const currentPath = window.location.pathname.toLowerCase();
-        const publicPaths = [
-            'login.html',
-            'register.html',
-            'forgot-password.html',
-            'index.html',
-            '/',
-            'src/pages/auth/login.html',
-            'src/pages/auth/register.html',
-            'src/pages/auth/forgot-password.html'
-        ];
-        
-        return publicPaths.some(path => 
-            currentPath.endsWith(path) || 
-            currentPath.includes('/auth/' + path)
-        );
     }
 
     async login(username, password) {
@@ -144,7 +123,10 @@ class AuthService {
         localStorage.removeItem('currentUser');
 
         // Only redirect to login if we're not already on a public page
-        if (!this.isPublicPage()) {
+        const publicPages = ['login.html', 'register.html', 'forgot-password.html', 'index.html'];
+        const currentPage = window.location.pathname.split('/').pop();
+        
+        if (!publicPages.includes(currentPage)) {
             window.location.href = '/src/pages/auth/login.html';
         }
     }
