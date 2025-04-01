@@ -126,9 +126,7 @@ class AuthService {
         const publicPages = ['login.html', 'register.html', 'forgot-password.html', 'index.html'];
         const currentPage = window.location.pathname.split('/').pop();
         
-        if (!publicPages.includes(currentPage)) {
-            window.location.href = '/src/pages/auth/login.html';
-        }
+        
     }
 
     updateAuthUI() {
