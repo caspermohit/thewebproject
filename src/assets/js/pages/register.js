@@ -3,7 +3,6 @@
  * @author Mohit Shah
  * Handles registration page functionality, including authentication, form validation, and UI updates
  */
-
 import authService from '../auth.js';
 import formHandler from '../modules/forms.js';
 import uiHandler from '../modules/ui.js';
@@ -77,16 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Store the registration timestamp
                 localStorage.setItem('last_registration', Date.now().toString());
 
-                uiHandler.showNotification('Registration successful! Redirecting to login...', 'success');
+                // Show success message and wait for it to be displayed
+                await new Promise(resolve => {
+                    uiHandler.showNotification('Registration successful! Redirecting to login...', 'success');
+                    setTimeout(resolve, 1000);
+                });
                 
-                // Redirect to login page after delay
-                setTimeout(() => {
-                    window.location.href = 'login.html';
-                }, 2000);
+                // Hide loader before redirect
+                uiHandler.hideLoading(loader);
+                
+                // Redirect to login page
+                window.location.href = 'login.html';
 
             } catch (error) {
                 uiHandler.showNotification(error.message || 'Registration failed', 'error');
-            } finally {
                 uiHandler.hideLoading(loader);
             }
         }
