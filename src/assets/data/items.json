@@ -1,10 +1,3 @@
-
-/**
- * Items data for Share&Care Platform
- * @author Mohit Shah
- * Handles item data, including item management, and UI updates
- */
-
 {
   "items": [
     {
