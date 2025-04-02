@@ -314,7 +314,7 @@ function addItemsToMap(items, targetItemId = null) {
             const infoWindow = new google.maps.InfoWindow({
                 content: `
                     <div class="map-popup">
-                        <img src="${item.images?.[0] || '/src/assets/images/furniture/couch.jpg'}" 
+                        <img src="${item.images?.[0] || '../images/furniture/couch.jpg'}" 
                              alt="${item.title || 'Item image'}" 
                              style="width: 100%; height: 150px; object-fit: cover;">
                         <h4>${item.title || 'Unnamed Item'}</h4>
@@ -375,7 +375,7 @@ function updateItemList(items) {
             <div class="item-card" data-item-id="${item.id}">
                 <div class="grid-x grid-padding-x align-middle">
                     <div class="cell small-4">
-                        <img src="${item.images?.[0] || '/src/assets/images/furniture/couch.jpg'}" 
+                        <img src="${item.images?.[0] || '../images/furniture/couch.jpg'}" 
                              alt="${item.title || 'Item image'}" 
                              class="item-image">
                     </div>

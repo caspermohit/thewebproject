@@ -7,7 +7,7 @@
       "condition": "Like New",
       "description": "Beautiful modern brown leather couch in excellent condition.",
       "images": [
-        "./src/assets/images/furniture/couch.jpg"
+        "../../../assets/images/furniture/couch.jpg"
       ],
       "location": {
         "address": "123 Downtown Street, San Francisco, CA",
@@ -36,7 +36,7 @@
       "condition": "Good",
       "description": "Modern LED desk lamp with adjustable brightness and color temperature. Perfect for study or work.",
       "images": [
-        "./src/assets/images/electronics/floor-lamp.jpg"
+        "../../../assets/images/electronics/floor-lamp.jpg"
       ],
       "location": {
         "address": "456 Tech Avenue, San Francisco, CA",
@@ -69,7 +69,7 @@
       "condition": "Good",
       "description": "Collection of 20 fiction books including bestsellers and classics. All in good reading condition.",
       "images": [
-        "./src/assets/images/furniture/table.jpg"
+        "../../../assets/images/furniture/table.jpg"
       ],
       "location": {
         "address": "789 Library Road, San Francisco, CA",
