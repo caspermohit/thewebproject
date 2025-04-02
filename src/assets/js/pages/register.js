@@ -14,6 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const loader = uiHandler.showLoading();
             
             try {
+                // Track registration attempt
+                if (typeof gtag !== 'undefined') {
+                    gtag("event", "registration_attempt", {
+                        event_category: "user_action",
+                        event_label: "User Registration Form Submit"
+                    });
+                }
+
                 // Add a small delay to make loading state more noticeable
                 await new Promise(resolve => setTimeout(resolve, 500));
 
@@ -79,6 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Store the registration timestamp
                 localStorage.setItem('last_registration', Date.now().toString());
 
+                // Track successful registration
+                if (typeof gtag !== 'undefined') {
+                    gtag("event", "registration_success", {
+                        event_category: "user_action",
+                        event_label: "Successful User Registration"
+                    });
+                }
+
                 // Show success message and wait for it to be displayed
                 await new Promise(resolve => {
                     uiHandler.showNotification('Registration successful! Redirecting to login...', 'success');
@@ -92,6 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'login.html';
 
             } catch (error) {
+                // Track registration failure
+                if (typeof gtag !== 'undefined') {
+                    gtag("event", "registration_failure", {
+                        event_category: "user_action",
+                        event_label: "Failed User Registration",
+                        error_message: error.message
+                    });
+                }
                 uiHandler.showNotification(error.message || 'Registration failed', 'error');
                 uiHandler.hideLoading(loader);
             }
